@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\Attribute;
 
 class ExampleTest extends TestCase
 {
@@ -14,8 +15,8 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        Attribute::create(["name"=>"TEst", "displayName"=>"test", "type"=>"number"]);
 
-        $response->assertStatus(200);
+        $this->assertTrue(true);
     }
 }
