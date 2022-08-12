@@ -17,9 +17,11 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string("title");
             $table->text("description");
+            $table->text("brand");
             $table->text("pros");
             $table->text("cons");
             $table->string("link");
+            $table->text("meta_desc");
             $table->timestamps();
         });
     }
