@@ -1,0 +1,19 @@
+.dark-layout .form-control[type=file]::file-selector-button {
+  background-color: #283046;
+}
+
+/*Addendum*/
+
+#products-header label.btn-icon {
+  margin-bottom: 0px;
+}
+
+#products-header .btn-group > .btn:not(:first-child):nth-child(2) {
+  border-top-left-radius: 0.358rem;
+  border-bottom-left-radius: 0.358rem;
+}
+
+#products-header .btn-group.dropdown-sort {
+  margin-right: 0.5rem;
+}
+

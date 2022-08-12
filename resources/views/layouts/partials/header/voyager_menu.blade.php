@@ -1,7 +1,7 @@
 @if(!isset($innerLoop))
-<ul class="nav navbar-nav mb-auto">
+<ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
 @else
-<ul class="dropdown-menu bg-dark">
+<ul class="dropdown-menu"  data-bs-popper="none">
 @endif
 
 @php
@@ -25,35 +25,37 @@
         $icon = null;
         $caret = null;
 
-        // Background Color or Color
-        if (isset($options->color) && $options->color == true) {
-            $styles = 'color:'.$item->color;
-        }
-        if (isset($options->background) && $options->background == true) {
-            $styles = 'background-color:'.$item->color;
-        }
-
         // With Children Attributes
         if(!$originalItem->children->isEmpty()) {
-            $linkAttributes =  'class="nav-link h5 mb-0 dropdown-toggle text-white" data-toggle="dropdown"';
+            $linkAttributes =  'data-bs-toggle=dropdown';
             $caret = '<span class="caret"></span>';
 
             if(url($item->link()) == url()->current()){
-                $listItemClass = 'dropdown active bg-dark';
+                $listItemClass = 'dropdown active';
             }else{
                 $listItemClass = 'dropdown';
             }
         }
-
+        // dd($item, App\Homepage::first());
         // Set Icon
-        if(isset($options->icon) && $options->icon == true){
-            $icon = '<i class="' . $item->icon_class . '"></i>';
-        }#5956E9
+        if(isset($item->icon_class) && $item->icon_class !== null){
+            $icon .= '<i data-feather="'.$item->icon_class.'"></i>';
+        }
+
+        if (url($item->link()) === URL::current()) {
+            $listItemClass.="active";
+        }
 
     @endphp
 
-    <li class="nav-item {{ $listItemClass }}">
-        <a @if($originalItem->children->isEmpty())class="nav-link h5 mb-0 text-white"@else {!! $linkAttributes ?? '' !!} @endif  href="{{ url($item->link()) }}" target="{{ $item->target }}" style="{{ $styles }}" {!! $linkAttributes ?? '' !!}>
+    <li class="nav-item {{ $listItemClass }}" @if(!$originalItem->children->isEmpty()){{'data-menu=dropdown'}}@endif >
+        <a 
+            class="nav-link d-flex align-items-center @if(! $originalItem->children->isEmpty()) dropdown-toggle @endif @if (isset($innerLoop))  {{ "dropdown-item" }} @endif" 
+            @if(! $originalItem->children->isEmpty()) {!! $linkAttributes ?? '' !!} @endif  
+            href="{{ url($item->link()) }}" 
+            target="{{ $item->target }}" 
+            style="{{ $styles }}" {!! $linkAttributes ?? '' !!}
+        >
             {!! $icon !!}
             <span>{{ $item->title }}</span>
             {!! $caret !!}
