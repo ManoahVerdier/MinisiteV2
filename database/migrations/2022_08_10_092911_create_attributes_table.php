@@ -17,7 +17,7 @@ class CreateAttributesTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("displayName");
-            $table->enum("type", ["radio_btn","rich_text_box","number"]);
+            $table->enum("type", ["radio_btn","rich_text_box","number","text"]);
             $table->timestamps();
         });
     }

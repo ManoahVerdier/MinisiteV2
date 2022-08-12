@@ -21,6 +21,9 @@ class Attribute extends Model
                 $options = array();
                 $name = preg_replace("/[^A-Za-z0-9]/", "", Str::camel($attribute->name));
                 switch($attribute->type){
+                    case "text" : 
+                        $table->text($name)->nullable();
+                    break;
                     case "rich_text_box" : 
                         $table->text($name)->nullable();
                     break;
@@ -60,6 +63,9 @@ class Attribute extends Model
                 $options = array();
                 $name = preg_replace("/[^A-Za-z0-9]/", "", Str::camel($attribute->name));        
                 switch($attribute->type){
+                    case "text" : 
+                        $table->text($name)->change();
+                    break;
                     case "rich_text_box" : 
                         $table->text($name)->change();
                     break;
