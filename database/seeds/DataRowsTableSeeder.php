@@ -2231,7 +2231,7 @@ class DataRowsTableSeeder extends Seeder
                 'browse' => 1,
                 'data_type_id' => 18,
                 'delete' => 1,
-                'details' => '{"default":"text","options":{"text":"Texte","number":"Nombre","btn_radio":"Oui\\/Non","rich_text_box":"Texte avec \\u00e9diteur"}}',
+                'details' => '{"default":"text","options":{"text":"Texte","number":"Nombre","radio_btn":"Oui\\/Non","rich_text_box":"Texte avec \\u00e9diteur"}}',
                 'display_name' => 'Type',
                 'edit' => 1,
                 'field' => 'type',
@@ -2319,25 +2319,9 @@ class DataRowsTableSeeder extends Seeder
                 'order' => 3,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'text',
+                'type' => 'rich_text_box',
             ),
             144 => 
-            array (
-                'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 19,
-                'delete' => 1,
-                'details' => '{}',
-                'display_name' => 'Marque',
-                'edit' => 1,
-                'field' => 'marque',
-                'id' => 229,
-                'order' => 4,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'text',
-            ),
-            145 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2351,9 +2335,9 @@ class DataRowsTableSeeder extends Seeder
                 'order' => 5,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'text',
+                'type' => 'rich_text_box',
             ),
-            146 => 
+            145 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2367,9 +2351,9 @@ class DataRowsTableSeeder extends Seeder
                 'order' => 6,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'text',
+                'type' => 'rich_text_box',
             ),
-            147 => 
+            146 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2385,7 +2369,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text',
             ),
-            148 => 
+            147 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2401,7 +2385,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text',
             ),
-            149 => 
+            148 => 
             array (
                 'add' => 0,
                 'browse' => 1,
@@ -2417,7 +2401,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            150 => 
+            149 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -2432,6 +2416,38 @@ class DataRowsTableSeeder extends Seeder
                 'read' => 0,
                 'required' => 0,
                 'type' => 'timestamp',
+            ),
+            150 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 19,
+                'delete' => 1,
+                'details' => '{}',
+                'display_name' => 'Marque',
+                'edit' => 1,
+                'field' => 'brand',
+                'id' => 242,
+                'order' => 4,
+                'read' => 1,
+                'required' => 1,
+                'type' => 'text',
+            ),
+            151 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 19,
+                'delete' => 1,
+                'details' => '{}',
+                'display_name' => 'Image',
+                'edit' => 1,
+                'field' => 'image',
+                'id' => 243,
+                'order' => 8,
+                'read' => 1,
+                'required' => 0,
+                'type' => 'image',
             ),
         ));
         

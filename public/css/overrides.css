@@ -17,3 +17,152 @@
   margin-right: 0.5rem;
 }
 
+.list-view .card .item-img .card-img-top {
+  border-radius: 0.428rem;
+  margin-left: 0.5rem;
+}
+
+.grid-view .card .item-img {
+  justify-content: center;
+}
+
+.grid-view .card .item-img .card-img-top {
+  border-radius: 0.428rem;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+
+.app-ecommerce-details .product-features li i,
+.app-ecommerce-details .product-features li svg {
+  height: 1.4rem;
+  width: 1.4rem;
+  font-size: 1.4rem;
+}
+
+.app-ecommerce-details .product-features li span {
+  font-weight: 600;
+}
+
+.app-ecommerce-details .product-features li svg {
+  margin-right: 0.75rem;
+}
+
+.app-ecommerce-details .product-features li {
+  margin-bottom: 1rem;
+}
+
+.app-ecommerce-details .product-features li {
+  display: flex;
+  align-items: center;
+}
+
+.app-ecommerce-details .product-features {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.app-ecommerce-details .item-features {
+  background-color: #f8f8f8;
+  padding-top: 5.357rem;
+  padding-bottom: 5.357rem;
+}
+
+.swiper-responsive-breakpoints.swiper-container .swiper-slide .img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+.swiper-responsive-breakpoints.swiper-container .swiper-slide {
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 1.5rem 3rem;
+  border-radius: 0.428rem;
+}
+
+footer .menu ul {
+  list-style: none;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer .menu ul li:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+footer .menu ul li:not(:first-child)::before {
+  content: "-";
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.horizontal-menu footer {
+  text-align: center;
+}
+
+.blog-recent-posts ul li.ratings-list-item svg {
+  margin-left: -3px;
+}
+
+/*categs*/
+
+.collapse-shadow .card:first-child,
+.collapse-shadow .card:first-child {
+  border-top-left-radius: 0.571rem;
+  border-top-right-radius: 0.571rem;
+}
+
+[class*=collapse-] .card,
+[dir] [class*=collapse-] .card:last-of-type {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.card .card {
+  box-shadow: none !important;
+}
+
+[class*=collapse-] .card:not(:last-of-type) {
+  border-bottom: 1px solid #ebe9f1;
+}
+
+.collapse-shadow .card {
+  transition: border 0.5s ease-in-out, all 0.3s ease-in-out;
+}
+
+.collapse-shadow .card:last-child,
+.collapse-shadow .card:last-child {
+  border-bottom-left-radius: 0.571rem;
+  border-bottom-right-radius: 0.571rem;
+}
+
+.collapse-icon [aria-expanded=false]:before {
+  transform: rotate(-90deg) !important;
+}
+
+.collapse-icon [data-toggle=collapse]:before {
+  left: 1rem;
+}
+
+.collapse-icon [data-toggle=collapse]:before {
+  margin-top: -8px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236e6b7b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 14px;
+}
+
+.collapse-icon [data-toggle=collapse]:before {
+  position: absolute;
+  top: calc(50% - 0px);
+  width: 14px;
+  height: 11px;
+  content: "";
+  transition: all 0.3s linear 0s;
+}
+
+.collapse-icon [data-toggle=collapse] h4 {
+  padding-left: 1rem;
+}
+

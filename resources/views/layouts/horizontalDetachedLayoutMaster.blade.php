@@ -44,6 +44,7 @@ data-asset-path="{{ asset('/')}}">
   {{-- include footer --}}
   @include('panels/footer')
 
+
   {{-- include default scripts --}}
   @include('panels/scripts')
 
@@ -57,7 +58,8 @@ data-asset-path="{{ asset('/')}}">
     })
   </script>
 
-@livewireScripts
+  @livewireScripts
+
 </body>
 
 </html>

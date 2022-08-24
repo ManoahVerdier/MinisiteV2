@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->text("pros");
             $table->text("cons");
             $table->string("link");
+            $table->string("image")->nullable();
             $table->text("meta_desc");
             $table->timestamps();
         });

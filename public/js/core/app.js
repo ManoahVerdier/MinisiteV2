@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -673,88 +673,60 @@ window.colors = {
             $otherList = '',
             $htmlList = '',
             $bookmarkhtmlList = '',
-            $pageList = '<li class="d-flex align-items-center">' + '<a href="#">' + '<h6 class="section-label mt-75 mb-0">Pages</h6>' + '</a>' + '</li>',
+            $pageList = '',
             $activeItemClass = '',
             $bookmarkIcon = '',
             $defaultList = '',
             a = 0; // getting json data from file for search results
+        //$.getJSON(assetPath + 'data/' + $filename + '.json', function (data) {
 
-        $.getJSON(assetPath + 'data/' + $filename + '.json', function (data) {
-          for (var i = 0; i < data.listItems.length; i++) {
+        $.ajax($("#rechercheAjaxUrl").attr("value").replace("%", value)).done(function (data) {
+          data = JSON.parse(data);
+          console.log(data.products[0].title.toLowerCase());
+
+          for (var i = 0; i < data.products.length; i++) {
             // if current is bookmark then give class to star icon
             // for laravel
             if ($('body').attr('data-framework') === 'laravel') {
-              data.listItems[i].url = assetPath + data.listItems[i].url;
-            }
-
-            if (bookmark === true) {
-              activeClass = ''; // resetting active bookmark class
-
-              var arrList = $('ul.nav.navbar-nav.bookmark-icons li'),
-                  $arrList = ''; // Loop to check if current seach value match with the bookmarks already there in navbar
-
-              for (var j = 0; j < arrList.length; j++) {
-                if (data.listItems[i].name === arrList[j].firstChild.dataset.bsOriginalTitle) {
-                  activeClass = ' text-warning';
-                  break;
-                } else {
-                  activeClass = '';
-                }
-              }
-
-              $bookmarkIcon = feather.icons['star'].toSvg({
-                "class": 'bookmark-icon float-end' + activeClass
-              });
+              data.products[i].url = $("#productUrl").attr("value").replace("%", data.products[i].slug);
             } // Search list item start with entered letters and create list
 
 
-            if (data.listItems[i].name.toLowerCase().indexOf(value) == 0 && a < 5) {
-              if (a === 0) {
-                $activeItemClass = 'current_item';
-              } else {
-                $activeItemClass = '';
-              }
-
-              $startList += '<li class="auto-suggestion ' + $activeItemClass + '">' + '<a class="d-flex align-items-center justify-content-between w-100" href=' + data.listItems[i].url + '>' + '<div class="d-flex justify-content-start align-items-center">' + feather.icons[data.listItems[i].icon].toSvg({
-                "class": 'me-75 '
-              }) + '<span>' + data.listItems[i].name + '</span>' + '</div>' + $bookmarkIcon + '</a>' + '</li>';
-              a++;
+            if (a === 0) {
+              $activeItemClass = 'current_item';
+            } else {
+              $activeItemClass = '';
             }
+
+            $startList += '<li class="auto-suggestion ' + $activeItemClass + '">' + '<a class="d-flex align-items-center justify-content-between w-100" href=' + data.products[i].url + '>' + '<div class="d-flex justify-content-start align-items-center">' + feather.icons["shopping-bag"].toSvg({
+              "class": 'mr-75 '
+            }) + '<span>' + data.products[i].title + '</span>' + '</div>' + $bookmarkIcon + '</a>' + '</li>';
+            a++;
           }
 
-          for (var i = 0; i < data.listItems.length; i++) {
-            if (bookmark === true) {
-              activeClass = ''; // resetting active bookmark class
+          if (i > 0) {
+            $startList = '<li class="d-flex align-items-center"><a href="javascript:void(0);"><h6 class="section-label mt-75 mb-0">Produits</h6></a></li>' + $startList;
+          }
 
-              var arrList = $('ul.nav.navbar-nav.bookmark-icons li'),
-                  $arrList = ''; // Loop to check if current search value match with the bookmarks already there in navbar
-
-              for (var j = 0; j < arrList.length; j++) {
-                if (data.listItems[i].name === arrList[j].firstChild.dataset.bsOriginalTitle) {
-                  activeClass = ' text-warning';
-                } else {
-                  activeClass = '';
-                }
-              }
-
-              $bookmarkIcon = feather.icons['star'].toSvg({
-                "class": 'bookmark-icon float-end' + activeClass
-              });
-            } // Search list item not start with letters and create list
-
-
-            if (!(data.listItems[i].name.toLowerCase().indexOf(value) == 0) && data.listItems[i].name.toLowerCase().indexOf(value) > -1 && a < 5) {
-              if (a === 0) {
-                $activeItemClass = 'current_item';
-              } else {
-                $activeItemClass = '';
-              }
-
-              $otherList += '<li class="auto-suggestion ' + $activeItemClass + '">' + '<a class="d-flex align-items-center justify-content-between w-100" href=' + data.listItems[i].url + '>' + '<div class="d-flex justify-content-start align-items-center">' + feather.icons[data.listItems[i].icon].toSvg({
-                "class": 'me-75 '
-              }) + '<span>' + data.listItems[i].name + '</span>' + '</div>' + $bookmarkIcon + '</a>' + '</li>';
-              a++;
+          for (var i = 0; i < data.categories.length; i++) {
+            if ($('body').attr('data-framework') === 'laravel') {
+              data.categories[i].url = $("#categoryUrl").attr("value").replace("%", data.categories[i].slug);
             }
+
+            if (a === 0) {
+              $activeItemClass = 'current_item';
+            } else {
+              $activeItemClass = '';
+            }
+
+            $otherList += '<li class="auto-suggestion ' + $activeItemClass + '">' + '<a class="d-flex align-items-center justify-content-between w-100" href=' + data.categories[i].url + '>' + '<div class="d-flex justify-content-start align-items-center">' + feather.icons["tag"].toSvg({
+              "class": 'mr-75 '
+            }) + '<span>' + data.categories[i].name + '</span>' + '</div>' + $bookmarkIcon + '</a>' + '</li>';
+            a++;
+          }
+
+          if (i > 0) {
+            $otherList = '<li class="d-flex align-items-center"><a href="javascript:void(0);"><h6 class="section-label mt-75 mb-0">Catégories</h6></a></li>' + $otherList;
           }
 
           $defaultList = $('.main-search-list-defaultlist').html();
@@ -1153,7 +1125,7 @@ if (typeof jQuery.validator === 'function') {
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /*!****************************************!*\
   !*** multi ./resources/js/core/app.js ***!
   \****************************************/

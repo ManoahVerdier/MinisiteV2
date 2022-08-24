@@ -32,8 +32,8 @@ class Attribute extends Model
                     break;
                     case "radio_btn" :
                         $table->Boolean($name)->nullable();
-                        $options["default"] = "true";
-                        $options["options"] = array("true"=> "Oui","false"=> "Non");
+                        $options["default"] = "1";
+                        $options["options"] = array("1"=> "Oui","0"=> "Non");
                     break;
                 }
                 $dr = DataRow::create([
@@ -74,7 +74,7 @@ class Attribute extends Model
                     break;
                     case "radio_btn" :
                         $table->Boolean($name)->change();
-                        $options["default"] = "true";
+                        $options["default"] = "1";
                         $options["options"] = array("1"=> "Oui","0"=> "Non");
                     break;
                 }

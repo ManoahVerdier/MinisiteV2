@@ -14,15 +14,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Formation;
-use App\Categorie;
-use App\SousCategorie;
-use App\Contact;
+use App\Category;
 use App\Page;
-use App\PageProduit;
+use App\Product;
 use App\Faq;
 use App\FaqCategory;
-use App\Conseil;
 use App\Homepage;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Mail;
@@ -47,8 +43,11 @@ class SiteController extends Controller
     public function homepage()
     {
         $hp = Homepage::first();
-        $produits = PageProduit::all()->take(3);
-        return view('home', compact('hp','produits'));
+        $produits = Product::all()->take(5);
+        $produitsRecents = Product::all()->sortByDesc("created_at")->take(5);
+        $pageConfigs = ['contentLayout' => 'content-detached-right-sidebar', 'bodyClass' => 'content-detached-right-sidebar'];
+
+        return view('home', compact('hp','produits','produitsRecents','pageConfigs'));
     }
 
 
@@ -194,11 +193,36 @@ class SiteController extends Controller
      * 
      * @return void
      */
-    public function page_produit($slug)
+    public function produit($slug)
     {
-        $page = PageProduit::where('slug', $slug)->firstOrFail();
-        return view('page_produit', compact('page'));
-        //return view('page', compact('page'));
+        $product = Product::where('slug', $slug)->firstOrFail();
+        $product->stars=4;
+        return view('page_produit', compact('product'));
+    }
+
+    /**
+     * Liste filtrable des produits
+     * 
+     * @return void
+     */
+    public function produits($search="")
+    {
+
+        $pageConfigs = [
+            'contentLayout' => "content-detached-left-sidebar",
+            'pageClass' => 'ecommerce-application',
+        ];
+
+        $breadcrumbs = [
+            ['link' => "/", 'name' => "Accueil"], ['name' => "Comparatif"]
+        ];
+
+
+        return view('/comparatif', [
+            'pageConfigs' => $pageConfigs,
+            'breadcrumbs' => $breadcrumbs,
+            'search'      => $search
+        ]);
     }
 
 
@@ -213,6 +237,23 @@ class SiteController extends Controller
     }
 
     /**
+     * Page recherche
+     * 
+     * @return void
+     */
+    public function rechercheAjax($search)
+    {
+        $products=Product::search($search)
+                            ->get();
+        $categs = Category::where("name","LIKE","%$search%")->get();
+        return '{
+            "products":'.$products->toJSON().',
+            "categories":'.$categs->toJSON()."
+        }";
+        //return view('recherche');
+    }
+
+    /**
      * Traitement du formulaire de recherche et affichage des résultats
      * 
      * @param Request $request les données postées
@@ -221,36 +262,57 @@ class SiteController extends Controller
      */
     public function recherche(Request $request)
     {
-        $pages = PageProduit::
-            where(
-                'title', 
-                'LIKE', 
-                '%'.$request->get('search').'%'
-            )
-            ->orWhere(
-                'excerpt', 
-                'LIKE', 
-                '%'.$request->get('search').'%'
-            )
-            ->orWhere(
-                'subtitle', 
-                'LIKE', 
-                '%'.$request->get('search').'%'
-            )
-            ->orWhere(
-                'presentation',
-                'LIKE',
-                '%'.$request->get('search').'%'
-            )
-            ->orWhere(
-                'resume',
-                'LIKE',
-                '%'.$request->get('search').'%'
-            )
-            ->get();
+        $term = $request->get('search');
         
-        $search = $request->get('search');
-        return view('recherche', compact('pages', 'search'));
+        return redirect()->action([SiteController::class,"produits"],["search"=>$term]);
+
+        //return view('recherche', compact('pages', 'search'));
     }
+
+    /**
+     * Page index des produits d'une catégorie
+     *
+     * @param string $categSlug le slug de la catégorie
+     * 
+     * @return void
+     */
+    public function category($categSlug)
+    {
+        $category = Category::where('slug', $categSlug)->firstOrFail();
+        $pageConfigs = [
+            'contentLayout' => "content-detached-left-sidebar",
+            'pageClass' => 'ecommerce-application',
+        ];
+        $breadcrumbs = [
+            ['link' => "/", 'name' => "Accueil"], ['link' => "/categories", 'name' => "Catégories"], ['name' => $category->name]
+        ];
+        
+        $title = $category->name;
+
+        return view('category', compact('category','pageConfigs','breadcrumbs','title'));
+    }
+
+    /**
+     * Page index des categories
+     * 
+     * @return void
+     */
+    public function categories()
+    {
+        $categories = Category::where("parent_id",null)->get();
+        $configData = $pageConfigs = [
+            'contentLayout' => "content-detached-no-sidebar",
+            'pageClass' => 'ecommerce-application',
+        ];
+        $breadcrumbs = [
+            ['link' => "/", 'name' => "Accueil"], ['name' => "Catégories"]
+        ];
+        
+        $title = "Catégories";
+
+        return view('categories', compact('categories','pageConfigs','breadcrumbs','title', 'configData'));
+    }
+
+    
     
 }

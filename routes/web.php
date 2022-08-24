@@ -11,6 +11,7 @@
  * @link     http://certificationiso.fr
  */
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
@@ -43,11 +44,16 @@ Route::get('/', 'SiteController@homepage');
 
 Route::get('/p/{slug}', 'SiteController@page')
     ->name('page');
-Route::get('/produit/{slug}', 'SiteController@page_produit')
-    ->name('page_produit');
+Route::get('/produit/{slug}', 'SiteController@produit')
+    ->name('produit');
+    Route::get('/produits/{search}', 'SiteController@produits')
+    ->name('produits');
+    Route::get('/produits', 'SiteController@produits')
+    ->name('produitsInit');
 
 Route::post('/recherche', ['as'=>'recherche','uses'=>'SiteController@recherche']);
 Route::get('/recherche', 'SiteController@rechercheGet');
+Route::get('/rechercheAjax/{search}', 'SiteController@rechercheAjax')->name("rechercheAjax");
 
 Route::get('/mentions-legales', 'SiteController@mentionsLegales')
     ->name('mentions_legales');
@@ -63,6 +69,8 @@ Route::get('/a-propos-nous', 'SiteController@aPropos')
 Route::get('/faqs', 'SiteController@faqs')->name('faqs');
 Route::get('/faq/{slug}', 'SiteController@faq')->name('faq_slug');
 Route::get('/faq_categ/{slug}', 'SiteController@categorieFaq')->name('faq_categ');
+Route::get('/category/{slug}', 'SiteController@category')->name('category');
+Route::get('/categories', 'SiteController@categories')->name('categories');
 
 Route::group(
     ['prefix' => 'admin'], 
@@ -79,11 +87,6 @@ Route::group(
 
 
 
-
-
-
-// Main Page Route
-Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
 
 
 /* Route Dashboards */

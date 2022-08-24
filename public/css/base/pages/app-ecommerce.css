@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .ecommerce-application .content-body {
   position: relative;
 }
@@ -39,12 +41,13 @@
   transform: translate(-50%, -15%);
 }
 
-.ecommerce-application .sidebar-shop .range-slider.noUi-horizontal .noUi-handle .noUi-tooltip:before {
-  content: "$ ";
-}
-
 .ecommerce-application .sidebar-shop .range-slider.noUi-horizontal .noUi-handle:active .noUi-tooltip {
   opacity: 1;
+}
+
+.ecommerce-application .sidebar-shop .range-slider.noUi-horizontal.slider-prix .noUi-handle:after,
+.ecommerce-application .sidebar-shop .range-slider.noUi-horizontal.slider-Prix .noUi-handle:after {
+  content: "\20AC   ";
 }
 
 .ecommerce-application .sidebar-shop .ratings-list {

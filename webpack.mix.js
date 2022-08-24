@@ -69,6 +69,8 @@ const path = require('path')
  mix.copyDirectory('resources/data', 'public/data')
 
 mix.js('resources/js/app.js', 'public/js')
+  .js('resources/js/productList.js', 'public/js')
+  .js('resources/js/product.js', 'public/js')
     .copy('resources/js/custom_voyager.js','public/js')
     .sass('resources/sass/app.scss', 'public/css', { prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';' })
     .js('resources/js/core/app-menu.js', 'public/js/core')

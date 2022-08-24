@@ -33,5 +33,9 @@ class DatabaseSeeder extends Seeder
         $this->call(HomepagesTableSeeder::class);
         $this->call(PageProduitsTableSeeder::class);
         $this->call(FaqsTableSeeder::class);
+        $this->call(UserRolesTableSeeder::class);
+        $this->call(AttributesTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
+        
     }
 }

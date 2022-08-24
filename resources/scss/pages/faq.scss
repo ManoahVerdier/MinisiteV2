@@ -1,0 +1,63 @@
+#accordion .faq_icon {
+    float: right;
+    transition: all 0.5s;
+ color:white;
+ padding: 0.375rem 0.75rem;
+ line-height:1.6
+ }
+ 
+ #accordion .btn-link.collapsed + .faq_icon.fa-plus{
+ display:inherit;
+ }
+ 
+ #accordion .btn-link + .faq_icon.fa-plus{
+ display:none;
+ }
+ 
+ #accordion .btn-link.collapsed + .faq_icon.fa-plus + .faq_icon.fa-minus{
+ display:none;
+ }
+ #accordion .btn-link + .faq_icon.fa-plus + .faq_icon.fa-minus{
+ display:inherit;
+ }
+
+#accordion .inactive {
+    border-radius:15px;
+    transition: all ease .4s;
+    .card{
+        padding-left:0px !important;
+        padding-right:0px !important;
+        border-radius:15px;
+        transition: all ease .4s;
+        .card-header{
+            background-color:white !important;
+            color:$primary !important;
+            
+
+            h5{
+                color:$primary !important;
+
+                i,button{
+                    color:$primary !important;
+                }
+            }
+        }
+    }
+}
+
+#accordion .active {
+    
+    -webkit-box-shadow: 0 5px 40px rgb(39 39 46 / 10%);
+    box-shadow: 0 5px 40px rgb(39 39 46 / 10%);
+    border-radius:15px;
+    transition: all ease .4s;
+    .card{
+        border-radius:15px;
+        transition: all ease .4s;
+        .card-header{
+            border-radius:15px;
+            transition: all ease .4s;
+        }
+    }
+    
+}
