@@ -10,7 +10,7 @@
         target="_blank">Cyn Communication</a>,
       <span class="d-none d-sm-inline-block">Tous droits réservés - </span>
     </span>
-    <span class="d-none d-md-inline-block"><i data-feather="award" class="text-primary"></i> <a href="verdier-developpement.fr">MVDI</a> </span>
+    <span class="d-none d-md-inline-block"><i data-feather="award" class="text-primary"></i> <a href="https://verdier-developpement.fr">MVDI</a> </span>
   </p>
   <div class="clearfix menu">
     {{ menu('footer','bootstrap')}}
