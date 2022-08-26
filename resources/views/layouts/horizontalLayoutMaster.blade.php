@@ -64,6 +64,9 @@ data-asset-path="{{ asset('/')}}">
   {{-- include default scripts --}}
   @include('panels/scripts')
 
+
+@section('page-script')
+
   <script type="text/javascript">
     $(window).on('load', function() {
       if (feather) {
@@ -73,6 +76,7 @@ data-asset-path="{{ asset('/')}}">
       }
     })
   </script>
+@endsection
 </body>
 
 </html>

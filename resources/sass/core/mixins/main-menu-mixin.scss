@@ -281,8 +281,10 @@
         .open,
         .sidebar-group-active {
           > a {
-            color: $main-menu-sub-open-color;
-            background: $main-menu-top-active-head-bg;
+            @media(min-width:767px){
+              color: $main-menu-sub-open-color;
+              background: $main-menu-top-active-head-bg;
+            }
             border-radius: 6px;
           }
           //for 2rd level menu

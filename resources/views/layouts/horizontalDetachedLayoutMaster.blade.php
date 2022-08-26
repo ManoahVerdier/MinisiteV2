@@ -20,20 +20,31 @@ data-asset-path="{{ asset('/')}}">
     <div class="content-wrapper {{ $configData['layoutWidth'] === 'boxed' ? 'container-xxl p-0' : '' }}">
       {{-- Include Breadcrumb --}}
       @if($configData['pageHeader'] == true && isset($configData['pageHeader']))
-      @include('panels.breadcrumb')
+        @include('panels.breadcrumb')
       @endif
-      <div class="{{ $configData['sidebarPositionClass'] }}">
-        <div class="sidebar">
-          {{-- Include Sidebar Content --}}
-          @yield('content-sidebar')
+
+      @if($configData['sidebarPositionClass']!="sidebar-detached sidebar-right")
+        <div class="{{ $configData['sidebarPositionClass'] }}">
+          <div class="sidebar">
+            {{-- Include Sidebar Content --}}
+            @yield('content-sidebar')
+          </div>
         </div>
-      </div>
+      @endif 
       <div class="{{ $configData['contentsidebarClass'] }}">
         <div class="content-body">
           {{-- Include Page Content --}}
           @yield('content')
         </div>
       </div>
+      @if($configData['sidebarPositionClass']=="sidebar-detached sidebar-right")
+        <div class="{{ $configData['sidebarPositionClass'] }}">
+          <div class="sidebar">
+            {{-- Include Sidebar Content --}}
+            @yield('content-sidebar')
+          </div>
+        </div>
+      @endif 
     </div>
   </div>
   <!-- End: Content-->

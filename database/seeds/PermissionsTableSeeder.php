@@ -545,6 +545,86 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-08-07 17:03:07',
                 'updated_at' => '2020-08-07 17:03:07',
             ),
+            66 => 
+            array (
+                'id' => 67,
+                'key' => 'browse_attributes',
+                'table_name' => 'attributes',
+                'created_at' => '2022-08-12 14:38:26',
+                'updated_at' => '2022-08-12 14:38:26',
+            ),
+            67 => 
+            array (
+                'id' => 68,
+                'key' => 'read_attributes',
+                'table_name' => 'attributes',
+                'created_at' => '2022-08-12 14:38:26',
+                'updated_at' => '2022-08-12 14:38:26',
+            ),
+            68 => 
+            array (
+                'id' => 69,
+                'key' => 'edit_attributes',
+                'table_name' => 'attributes',
+                'created_at' => '2022-08-12 14:38:26',
+                'updated_at' => '2022-08-12 14:38:26',
+            ),
+            69 => 
+            array (
+                'id' => 70,
+                'key' => 'add_attributes',
+                'table_name' => 'attributes',
+                'created_at' => '2022-08-12 14:38:26',
+                'updated_at' => '2022-08-12 14:38:26',
+            ),
+            70 => 
+            array (
+                'id' => 71,
+                'key' => 'delete_attributes',
+                'table_name' => 'attributes',
+                'created_at' => '2022-08-12 14:38:26',
+                'updated_at' => '2022-08-12 14:38:26',
+            ),
+            71 => 
+            array (
+                'id' => 72,
+                'key' => 'browse_products',
+                'table_name' => 'products',
+                'created_at' => '2022-08-12 14:38:45',
+                'updated_at' => '2022-08-12 14:38:45',
+            ),
+            72 => 
+            array (
+                'id' => 73,
+                'key' => 'read_products',
+                'table_name' => 'products',
+                'created_at' => '2022-08-12 14:38:45',
+                'updated_at' => '2022-08-12 14:38:45',
+            ),
+            73 => 
+            array (
+                'id' => 74,
+                'key' => 'edit_products',
+                'table_name' => 'products',
+                'created_at' => '2022-08-12 14:38:45',
+                'updated_at' => '2022-08-12 14:38:45',
+            ),
+            74 => 
+            array (
+                'id' => 75,
+                'key' => 'add_products',
+                'table_name' => 'products',
+                'created_at' => '2022-08-12 14:38:45',
+                'updated_at' => '2022-08-12 14:38:45',
+            ),
+            75 => 
+            array (
+                'id' => 76,
+                'key' => 'delete_products',
+                'table_name' => 'products',
+                'created_at' => '2022-08-12 14:38:45',
+                'updated_at' => '2022-08-12 14:38:45',
+            ),
         ));
         
         

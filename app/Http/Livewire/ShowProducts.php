@@ -15,12 +15,14 @@ class ShowProducts extends Component
 {
     use WithPagination;
 
-    protected $listeners = ['sliderUpdated','boolUpdated','categUpdated','reinit'];
-    public $orderBy = 'id';
+    protected $listeners = ['sliderUpdated','boolUpdated','categUpdated','rateUpdated','orderUpdated','reinit'];
+    public $orderBy;
+    public $orderDirection;
     public $search;
     public array $valuesFilter = array();
     public array $bool = array();
     public $category;
+    public $rate;
     public $isCateg;
 
     /* Constructeur */
@@ -29,6 +31,13 @@ class ShowProducts extends Component
         foreach($filtersBool as $filter){
             $this->bool[$filter->name]=false;
         }
+        $this->orderBy="id";
+        $this->orderDirection="asc";
+    }
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
     }
 
     /* Affichage */
@@ -43,6 +52,12 @@ class ShowProducts extends Component
                 $query->orWhere('category_id', $sub->id);
             }
         }
+        /*
+        if($this->rate ?? false){
+            $query->where('average_rating', ">=",$this->rate);
+        }*/
+
+        
         
         /* Gestion des sliders */
         foreach($this->valuesFilter as $name=>$value){
@@ -59,6 +74,8 @@ class ShowProducts extends Component
             }
         }
 
+        
+
         /* Gestion des checkboxes */
         foreach($this->bool as $name=>$bool_value){
             $name = preg_replace("/[^A-Za-z0-9]/", "", Str::camel($name));
@@ -68,7 +85,37 @@ class ShowProducts extends Component
         }
 
         /* Finalisation de la requête */
-        $products = $query->orderBy($this->orderBy)->paginate(6);
+       $products = $query->get();
+       $rate = $this->rate;
+       $orderBy = $this->orderBy;
+       $orderDirection = $this->orderDirection;
+       $productsItems = $products->filter(function($value,$index) use ($rate){
+        if($value->reviews->count()>0){
+            return $value->reviews->avg("global_rate")>$rate;
+        }
+        return true;
+       }) ->sortBy(function($product, $key) use ($orderBy, $orderDirection){
+            if($orderBy=="id")
+            {
+                return $product->id;
+            } else {
+                if($product->reviews->count()>0) {
+                    if($orderDirection=="asc"){
+                        return $product->reviews->avg("global_rate");
+                    } else {
+                        return -$product->reviews->avg("global_rate");
+                    }
+                } else {
+                    return 0;
+                }
+            }
+            
+       });
+
+
+       $products = $productsItems->paginate(9);
+       
+        
 
         /* Définition des filtres numériques (ie sliders) */
         $filtersNum = Attribute::where("type","number")->get();
@@ -87,7 +134,9 @@ class ShowProducts extends Component
             [
                 'products'=>$products,
                 'filtersNum'=>$filtersNum,
-                'filtersBool'=>$filtersBool
+                'filtersBool'=>$filtersBool,
+                'orderBy'=>$orderBy,
+                'orderDirection'=>$orderDirection
             ]
         );
     }
@@ -100,6 +149,12 @@ class ShowProducts extends Component
         }
     }
 
+    /*Event : mise à jour de l'ordre */
+    public function orderUpdated($data){
+        $this->orderBy = $data["orderBy"];
+        $this->orderDirection = $data["orderDirection"];
+    }
+
     /* Event : mise à jour d'une checkbox */
     public function boolUpdated($name){
         $this->bool[$name] = !$this->bool[$name];
@@ -110,17 +165,14 @@ class ShowProducts extends Component
         $this->category=$category;
     }
 
+    /* Event : mise à jour d'une note */
+    public function rateUpdated($rate){
+        $this->rate=$rate;
+    }
+
     public function reinit(){
-        if (!$this->isCateg) {
-            $this->category=null;
-        }
-
-        $filtersBool = Attribute::where("type","radio_btn")->get();
-        foreach($filtersBool as $filter){
-            $this->bool[$filter->name]=false;
-        }
-
-        $this->valuesFilter = array();
+        
+        return redirect(request()->header('Referer'));
     }
 
 }

@@ -17,10 +17,11 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Page;
 use App\Product;
+use App\Review;
 use App\Faq;
 use App\FaqCategory;
 use App\Homepage;
-use App\Http\Requests\ContactRequest;
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Mail;
 use DB;
 
@@ -49,11 +50,6 @@ class SiteController extends Controller
 
         return view('home', compact('hp','produits','produitsRecents','pageConfigs'));
     }
-
-
-
-
-  
 
     /**
      * Page mentions légales
@@ -118,8 +114,19 @@ class SiteController extends Controller
      */
     public function faqs()
     {
+        $configData = $pageConfigs = [
+            'contentLayout' => "content-detached-no-sidebar",
+            'pageClass' => 'faqs',
+        ];
+        $breadcrumbs = [
+            ['link' => "/", 'name' => "Accueil"], ['name' => "FAQs"]
+        ];
+        
+        $title = "FAQs";
+
         $faqs = Faq::all();
-        return view('faqs', compact('faqs'));
+        return view("faqs", compact("faqs", "pageConfigs", "configData", "breadcrumbs", "title"));
+        
     }
 
     /**
@@ -197,7 +204,15 @@ class SiteController extends Controller
     {
         $product = Product::where('slug', $slug)->firstOrFail();
         $product->stars=4;
-        return view('page_produit', compact('product'));
+        $compared=false;
+        if(session()->has("productsComparedLst")) {
+            $productsCompared = session("productsComparedLst");
+            if($productsCompared->contains("id",$product->id)){
+                $compared=true;
+            }
+        }
+
+        return view('page_produit', compact('product','compared'));
     }
 
     /**
@@ -214,11 +229,11 @@ class SiteController extends Controller
         ];
 
         $breadcrumbs = [
-            ['link' => "/", 'name' => "Accueil"], ['name' => "Comparatif"]
+            ['link' => "/", 'name' => "Accueil"], ['name' => "Tous les produits"]
         ];
 
 
-        return view('/comparatif', [
+        return view('/products', [
             'pageConfigs' => $pageConfigs,
             'breadcrumbs' => $breadcrumbs,
             'search'      => $search
@@ -314,5 +329,68 @@ class SiteController extends Controller
     }
 
     
-    
+    public function redirect(){
+        return Socialite::driver('linkedin')->redirect();
+    }
+
+    public function callback(){
+        $user = Socialite::driver('linkedin')->user();
+        dd($user);
+    }
+
+    public function addComparison($id){
+        $product = Product::find($id);
+        
+        if(session()->has("productsComparedLst")) {
+            $productsComparedLst = session("productsComparedLst");
+            if(! $productsComparedLst->contains('id', $id)){
+                $productsComparedLst->prepend($product);
+            } else {
+                $productsComparedLst = $productsComparedLst->reject(function($value, $key) use ($id){
+                    return $value->id==$id;
+                });
+                if($productsComparedLst->count() >= 3){
+                    session(['productsComparedLst'=>$productsComparedLst->range(0,2)]);
+                } else {
+                    session(['productsComparedLst'=>$productsComparedLst]);
+                }
+                return false;
+            }
+   
+        } else {
+            $productsComparedLst = collect([$product]);
+        }
+
+        if($productsComparedLst->count() >= 3){
+            session(['productsComparedLst'=>$productsComparedLst->splice(0,3)]);
+        } else {
+            session(['productsComparedLst'=>$productsComparedLst]);
+        }
+
+        return true;
+    }
+
+    public function comparatif(){
+        $configData = $pageConfigs = [
+            'contentLayout' => "content-detached-no-sidebar",
+            'pageClass' => 'comparatif',
+        ];
+        $breadcrumbs = [
+            ['link' => "/", 'name' => "Accueil"], ['name' => "Comparatif"]
+        ];
+        
+        $title = "Catégories";
+        if(session()->has("productsComparedLst")) {
+            $products = session("productsComparedLst");
+        } else {
+            $products = collect([]);
+        }
+        return view("comparatif", compact("products", "pageConfigs", "configData", "breadcrumbs", "title"));
+    }
+
+    public function addReview(Request $request){
+        $review = Review::create($request->except("_token"));
+
+        return redirect()->route("produit",["slug"=>Product::find($review->product_id)->slug]);
+    }
 }

@@ -120,6 +120,7 @@ $(function () {
       sidebarToggler = $('.shop-sidebar-toggler'),
       gridViewBtn = $('.grid-view-btn'),
       listViewBtn = $('.list-view-btn'),
+      comparison = $('.btn-comparison'),
       products = $('#products'),
       overlay = $('.body-content-overlay'),
       sortingDropdown = $('.dropdown-sort .dropdown-item'),
@@ -200,10 +201,29 @@ $(function () {
     $(this).on("click", function () {
       Livewire.emit("categUpdated", $(this).attr("value"));
     });
+  }); //Mise à jour du tri
+
+  $('.orderUpdate').each(function (index, element) {
+    $(this).on("click", function () {
+      console.log({
+        orderBy: $(this).attr("orderBy"),
+        orderDirection: $(this).attr("orderDirection")
+      });
+      Livewire.emit("orderUpdated", {
+        orderBy: $(this).attr("orderBy"),
+        orderDirection: $(this).attr("orderDirection")
+      });
+    });
+  }); //Mise à jour d'une note
+
+  $('.rateUpdate').each(function (index, element) {
+    $(this).on("click", function () {
+      console.log($(this).attr("value"));
+      Livewire.emit("rateUpdated", $(this).attr("value"));
+    });
   }); //Réinitialisation
 
   $('.btn-reinit').on('click', function () {
-    console.log("test");
     Livewire.emit("reinit");
   }); // Vue en grille
 
@@ -222,13 +242,44 @@ $(function () {
       gridViewBtn.removeClass('active');
       listViewBtn.addClass('active');
     });
-  }
-}); // Cacher la sidebar au redimmensionnement de la fenêtre
+  } // Cacher la sidebar au redimmensionnement de la fenêtre
 
-$(window).on('resize', function () {
-  if ($(window).outerWidth() >= 991) {
-    $('.sidebar-shop').removeClass('show');
-    $('.body-content-overlay').removeClass('show');
+
+  $(window).on('resize', function () {
+    if ($(window).outerWidth() >= 991) {
+      $('.sidebar-shop').removeClass('show');
+      $('.body-content-overlay').removeClass('show');
+    }
+  }); // For Comparison Icon
+
+  if (comparison.length) {
+    comparison.on('click', function () {
+      var $this = $(this);
+      $.ajax({
+        url: "/addComparison/" + $(this).attr("product-id")
+      }).done(function (data) {
+        $this.toggleClass("btn-outline-primary");
+        $this.toggleClass("btn-primary");
+        $this.find('svg').toggleClass('text-white');
+
+        if (data) {
+          toastr['success']('', 'Ajouté au comparateur', {
+            closeButton: true,
+            tapToDismiss: false,
+            toastClass: "toast-title toast-primary",
+            titleClass: "text-blank"
+          });
+        } else {
+          toastr['success']('', 'Retiré du comparateur', {
+            closeButton: true,
+            tapToDismiss: false,
+            toastClass: "toast-title toast-primary",
+            titleClass: "text-blank"
+          });
+          $this.trigger("blur");
+        }
+      });
+    });
   }
 });
 

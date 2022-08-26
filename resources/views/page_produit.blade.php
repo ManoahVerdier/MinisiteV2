@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/swiper.min.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/toastr.min.css')) }}">
+  <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/jquery.rateyo.min.css'))}}">
 @endsection
+
 
 @section('page-style')
   {{-- Page Css files --}}
@@ -15,6 +17,7 @@
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-number-input.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-toastr.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/app.css')) }}">
+  <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-ratings.css')) }}">
 @endsection
 
 @section('description', $product->description)
@@ -35,7 +38,7 @@ id="home-page"
 {{-- Content --}}
 @section('content')
 <section class="app-ecommerce-details">
-    <div class="card">
+    <div class="card"  product-id="{{ $product->id }}">
       <!-- Product Details starts -->
       <div class="card-body">
         <div class="row my-2">
@@ -55,7 +58,7 @@ id="home-page"
               <h4 class="item-price mr-1">{{ $product->prix ?? "" }} €</h4>
                 <ul class="unstyled-list list-inline pl-1 border-left">
                     @for($i=1;$i<=5;$i++)
-                        @if($i<=$product->stars)
+                        @if($i<=$product->reviews->avg("global_rate"))
                             <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
                         @else 
                             <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto unfilled-star"></i></li>
@@ -93,11 +96,14 @@ id="home-page"
                   <i data-feather="shopping-cart" class="mr-50"></i>
                   <span class="add-to-cart">Acheter</span>
                 </a>
-                <a href="#" class="btn btn-outline-secondary btn-wishlist mr-0 mr-sm-1 mb-1 mb-sm-0">
+                <a href="{{ route("produitsInit") }}" class="btn btn-outline-secondary btn-wishlist mr-0 mr-sm-1 mb-1 mb-sm-0">
                   <i data-feather="list" class="mr-50"></i>
                   <span>Retour à la liste</span>
                 </a>
-                
+                <a href="#" class="btn btn-outline-{{ $compared?"primary":"secondary" }} btn-comparison me-0 mr-sm-1 mb-1 mb-sm-0" product-id="{{ $product->id }}">
+                  <i data-feather="award" class="mr-50 {{ $compared?"text-primary":"" }}"></i>
+                  <span>{{ $compared?"Comparé":"Comparer" }}</span>
+                </a>
               </div>
             </div>
           </div>
@@ -190,6 +196,149 @@ id="home-page"
         </div>
         <!-- Related Products ends -->
     @endif
+    <div class="card-body">
+      
+        @if($product->reviews->count()>0)
+        <!-- Reviews Products starts -->
+        <div class="mt-4 mb-2 text-center">
+          <h4>Avis client</h4>
+      </div>
+      <div class="col-12 mt-1" id="blogComment">
+          @foreach($product->reviews as $r) 
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start">
+                            <div class="avatar mr-75">
+                                <img src="{{asset('images/portrait/small/avatar-s-9.jpg')}}" width="38" height="38" alt="Avatar" />
+                            </div>
+                            <div class="author-info">
+                                <h6 class="fw-bolder mb-25">{{ $r->name }}</h6>
+                                <p class="card-text">{{ $r->created_at }}</p>
+                                <p class="card-text">
+                                  <ul class="unstyled-list list-inline">
+                                    @for($i=1;$i<=5;$i++)
+                                        @if($i<=$r->global_rate)
+                                            <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
+                                        @else 
+                                            <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto unfilled-star"></i></li>
+                                        @endif
+                                    @endfor
+                                </ul>  
+                                </p>
+                                <p class="card-text">
+                                    {{ $r->comment }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+                <div class="col-md-4 col-12">
+                    <div class="card">
+                      <div class="card-header justify-content-center">
+                        <h4 class="card-title text-center">Synthèse des notes</h4>
+                      </div>
+                      <div class="card-body">
+                        <div 
+                            class="review-chart" 
+                            id="radar-chart" 
+                            data-rate-global="{{ $r->global_rate }}" 
+                            data-rate-client="{{ $r->client_service_rate }}" 
+                            data-rate-functionality="{{ $r->functionalities_rate }}" 
+                            data-rate-price="{{ $r->price_rate }}" 
+                            data-rate-interface="{{ $r->interface_rate }}"></div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            
+          @endforeach 
+        <!-- Reviews Products ends -->
+      </div>
+        @endif 
+      
+    </div>
+    </div>
+      <!-- Leave a Blog Comment -->
+      <div class="col-12 mt-1">
+        <h6 class="section-label mt-25">Ajouter un avis</h6>
+        <div class="card">
+          <div class="card-body">
+            <form action="{{ route("review") }}" class="form" method="POST">
+              @csrf 
+              <div class="row">
+                <div class="col-md-6 col-12">
+                  <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Nom" name="name" />
+                  </div>
+                  <textarea class="form-control mb-2" rows="6" placeholder="Commentaire" name="comment"></textarea>
+                </div>
+                <div class="col-md-6 col-12">
+                  <div class="card mb-1 align-items-center">
+                    <div class="card-header pt-0 pb-50">
+                      <h4 class="card-title">Note globale</h4>
+                    </div>
+                    <div class="card-body pb-50">
+                      <div class="basic-ratings ratingStars" starWidth="26px"></div>
+                      <input type="hidden" name="global_rate" value="0" class="counter"/>
+                    </div>
+                  </div>  
+                  <div class="row">
+                    <div class="col-md-6 col-12">
+                      <div class="card mb-1 align-items-center">
+                        <div class="card-header pt-0 pb-50">
+                          <h4 class="card-title">Service client</h4>
+                        </div>
+                        <div class="card-body pb-50">
+                          <div class="basic-ratings ratingStars"></div>
+                          <input type="hidden" name="client_service_rate" value="0" class="counter"/>
+                        </div>
+                      </div>
+                      <div class="card mb-1 align-items-center">
+                        <div class="card-header pt-0 pb-50">
+                          <h4 class="card-title">Fonctionnalités</h4>
+                        </div>
+                        <div class="card-body pb-50">
+                          <div class="basic-ratings ratingStars"></div>
+                          <input type="hidden" name="functionalities_rate" value="0" class="counter"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                      <div class="card mb-1 align-items-center">
+                        <div class="card-header pt-0 pb-50">
+                          <h4 class="card-title">Prix</h4>
+                        </div>
+                        <div class="card-body pb-50">
+                          <div class="basic-ratings ratingStars"></div>
+                          <input type="hidden" name="price_rate" value="0" class="counter"/>
+                        </div>
+                      </div>
+                      <div class="card mb-1 align-items-center">
+                        <div class="card-header pt-0 pb-50">
+                          <h4 class="card-title">Prise en main</h4>
+                        </div>
+                        <div class="card-body pb-50">
+                          <div class="basic-ratings ratingStars"></div>
+                          <input type="hidden" name="interface_rate" value="0" class="counter"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="product_id" value="{{ $product->id }}"/>
+                
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary">Envoyer</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--/ Leave a Blog Comment -->
     </div>
     
 @endsection
@@ -202,7 +351,9 @@ id="home-page"
   {{-- Vendor js files --}}
   <script src="{{ asset(mix('vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/extensions/swiper.min.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/charts/apexcharts.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/extensions/toastr.min.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/extensions/jquery.rateyo.min.js')) }}"></script>
 @endsection
 
 @section('page-script')

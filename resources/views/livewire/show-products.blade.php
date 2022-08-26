@@ -10,6 +10,7 @@
     </div>
     <div class="card">
       <div class="card-body">
+        <h4 class="filter-heading text-center d-block d-lg-none">Filtres</h4>
         @if(! $isCateg)
           <!-- Categories Starts -->
           <div id="product-categories">
@@ -74,19 +75,80 @@
 
         <!-- Rating starts -->
         <div id="ratings">
-          <h6 class="filter-title">Ratings</h6>
-          <div class="ratings-list">
-            <a href="#">
-              <ul class="unstyled-list list-inline">
-                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                <li>& up</li>
-              </ul>
-            </a>
-            <div class="stars-received">160</div>
+          <h6 class="filter-title">Notes</h6>
+          <div class="ratings-list flex-column">
+            <div class="form-check">
+              <input wire:model.live="rate" type="radio" id="rate0" name="rate-filter" class="rateUpdate form-check-input" value="0" />
+              <label href="#" class="mb-0">
+                <ul class="unstyled-list list-inline">
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                </ul>
+              </label>
+            </div>
+            <div class="form-check">
+              <input wire:model.live="rate" type="radio" id="rate1" name="rate-filter" class="rateUpdate form-check-input" value="1" />
+              <label href="#" class="mb-0">
+                <ul class="unstyled-list list-inline">
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                </ul>
+              </label>
+            </div>
+            <div class="form-check">
+              <input wire:model.live="rate" type="radio" id="rate2" name="rate-filter" class="rateUpdate form-check-input" value="2" />
+              <label href="#" class="mb-0">
+                <ul class="unstyled-list list-inline">
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                </ul>
+              </label>
+            </div> 
+            <div class="form-check">
+              <input wire:model.live="rate" type="radio" id="rate3" name="rate-filter" class="rateUpdate form-check-input" value="3" />
+              <label href="#" class="mb-0">
+                <ul class="unstyled-list list-inline">
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                </ul>
+              </label>
+            </div>
+            <div class="form-check">
+              <input wire:model.live="rate" type="radio" id="rate4" name="rate-filter" class="rateUpdate form-check-input" value="4" />
+              <label href="#" class="mb-0" >
+                <ul class="unstyled-list list-inline">
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                </ul>
+              </label>
+            </div>
+            <div class="form-check">
+              <input wire:model.live="rate" type="radio" id="rate0" name="rate-filter" class="rateUpdate form-check-input" value="5" />
+              <label href="#" class="mb-0">
+                <ul class="unstyled-list list-inline">
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                  <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                </ul>
+              </label>
+            </div>
           </div>
           
         </div>
@@ -111,9 +173,11 @@
         <div class="ecommerce-header-items">
           <div class="result-toggler">
             <button class="navbar-toggler shop-sidebar-toggler" type="button" data-bs-toggle="collapse">
-              <span class="navbar-toggler-icon d-block d-lg-none"><i data-feather="menu"></i></span>
+              <span class="navbar-toggler-icon d-block d-lg-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+              </span>
             </button>
-            <div class="search-results">{{ $products->total() }} résultat{{ $products->total() > 1 ? "s" : "" }}</div>
+            <div class="search-results">{{ $products->total() }} résultat{{ $products->total() > 1 ? "s" : "" }}</div> 
           </div>
           <div class="view-options d-flex">
             <div class="btn-group dropdown-sort">
@@ -125,12 +189,12 @@
                 aria-expanded="false"
                 wire:model="orderBy"
               >
-                <span class="active-sorting">Recommandé</span>
+                <span class="active-sorting">@if($orderBy=="id") Recommandé @else @if($orderDirection=="asc") Notes croissantes @else Notes décroissantes @endif @endif</span>
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Recommandé</a>
-                <a class="dropdown-item" href="#">Notes croissantes</a>
-                <a class="dropdown-item" href="#">Notes décroissantes</a>
+                <a class="dropdown-item orderUpdate @if($orderBy="id") selected @endif" href="#" orderBy="id"   orderDirection="asc">Recommandé</a>
+                <a class="dropdown-item orderUpdate @if($orderBy="rate" && $orderDirection="asc") selected @endif" href="#" orderBy="rate" orderDirection="asc">Notes croissantes</a>
+                <a class="dropdown-item orderUpdate @if($orderBy="rate" && $orderDirection="desc") selected @endif" href="#" orderBy="rate" orderDirection="desc">Notes décroissantes</a>
               </div>
             </div>
             <div class="btn-group" role="group">
@@ -180,7 +244,16 @@
   <!-- Début des produits -->
   <section id="products" class="grid-view">
     @forelse($products as $product)
-      <div class="card ecommerce-card">
+      @php 
+        $compared=false;
+        if(session()->has("productsComparedLst")) {
+            $productsCompared = session("productsComparedLst");
+            if($productsCompared->contains("id",$product->id)){
+                $compared=true;
+            }
+        }
+      @endphp 
+      <div class="card ecommerce-card" product-id="{{ $product->id }}">
         <div class="item-img text-center">
           <a href="{{ $product->link }}">
             <img
@@ -189,16 +262,26 @@
               alt="img-placeholder"
             />
           </a>
+          <a href="#" class="comparison-list position-absolute btn btn-circle float-right btn-{{ $compared?"primary":"outline-primary" }} btn-comparison me-0 mr-sm-1 mb-1 mb-sm-0"  product-id="{{ $product->id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{{ $compared?"text-white":"" }} feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </a>
         </div>
+        
         <div class="card-body">
           <div class="item-wrapper">
             <div class="item-rating">
               <ul class="unstyled-list list-inline">
-                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                @for($i=1;$i<=5;$i++)
+                        @if($i<=$product->reviews->avg("global_rate"))
+                            <li class="ratings-list-item">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star h-auto w-auto  text-primary fill-current"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            </li>
+                        @else 
+                            <li class="ratings-list-item">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star h-auto w-auto  unfilled-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            </li>
+                        @endif
+                    @endfor
               </ul>
             </div>
             <div>
@@ -208,10 +291,12 @@
           <h6 class="item-name">
             <a class="text-body" href="{{ $product->link }}">{{ $product->title }}</a>
             <span class="card-text item-company">De <a href="#" class="company-name">{{ $product->brand }}</a></span>
+            
           </h6>
           <p class="card-text item-description">
             {!! \Illuminate\Support\Str::words($product->description,30," ...") !!}
           </p>
+          
         </div>
         <div class="item-options text-center">
           <div class="item-wrapper">
@@ -219,14 +304,15 @@
               <h4 class="item-price">{{ isset($product->prix) ? $product->prix." €" : "" }}</h4>
             </div>
           </div>
-          <a href="#" class="btn btn-light btn-wishlist">
-            <i data-feather="book"></i>
+          <a href="{{route("produit",$product->slug)}}" class="btn btn-light btn-wishlist">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
             <span>Lire l'article</span>
           </a>
           <a href="{{ $product->link }}" class="btn btn-primary btn-cart">
-            <i data-feather="shopping-cart"></i>
+            <svg data-v-15eba8c6="" xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-50 feather feather-shopping-cart"><circle data-v-15eba8c6="" cx="9" cy="21" r="1"></circle><circle data-v-15eba8c6="" cx="20" cy="21" r="1"></circle><path data-v-15eba8c6="" d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
             <span class="add-to-cart">Voir le produit</span>
           </a>
+
         </div>
       </div>
       

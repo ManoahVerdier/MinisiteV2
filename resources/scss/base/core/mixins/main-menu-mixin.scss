@@ -209,8 +209,10 @@
       &.open:not(.menu-item-closing),
       &.sidebar-group-active {
         > a {
-          color: $main-menu-top-open-color;
-          background: $main-menu-top-open-head-bg;
+          @media(min-width:767px){
+            color: $main-menu-sub-open-color;
+            background: $main-menu-top-active-head-bg;
+          }
           border-radius: 6px;
         }
       }
@@ -281,8 +283,10 @@
         .open,
         .sidebar-group-active {
           > a {
-            color: $main-menu-sub-open-color;
-            background: $main-menu-top-active-head-bg;
+            @media(min-width:767px){
+              color: $main-menu-sub-open-color;
+              background: $main-menu-top-active-head-bg;
+            }
             border-radius: 6px;
           }
           //for 2rd level menu

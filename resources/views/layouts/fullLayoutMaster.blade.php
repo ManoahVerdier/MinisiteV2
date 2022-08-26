@@ -24,7 +24,9 @@
   <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo/favicon.ico') }}">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
     rel="stylesheet">
-
+    <meta id="rechercheAjaxUrl" value="{{ route("rechercheAjax",["search"=>"%"]) }}">
+    <meta id="productUrl" value="{{ route("produit",["slug"=>"%"]) }}">
+  <meta id="categoryUrl" value="{{ route("category",["slug"=>"%"]) }}">
   {{-- Include core + vendor Styles --}}
   @include('panels/styles')
 

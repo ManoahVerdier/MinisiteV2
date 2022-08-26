@@ -16,7 +16,7 @@ id="home-page"
 @endsection
 
 @section('content-sidebar')
-@include('home-sidebar')
+    @include('home-sidebar')
 @endsection
 
 @section('content')
@@ -77,9 +77,9 @@ id="home-page"
                 
                 
                 <hr class="my-2" />
-                <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center justify-content-between flex-column flex-md-row">
                     <div class="d-flex align-items-center">
-                        <ul class="unstyled-list list-inline pl-1">
+                        <ul class="unstyled-list list-inline pl-0 pl-md-1">
                             @for($i=1;$i<=5;$i++)
                                 @if($i<=$p->stars)
                                     <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
