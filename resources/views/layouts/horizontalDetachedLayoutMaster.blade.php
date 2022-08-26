@@ -44,16 +44,20 @@ data-asset-path="{{ asset('/')}}">
             @yield('content-sidebar')
           </div>
         </div>
-      @endif 
+      @endif  
+      {{-- include footer --}}
+      @include('panels/footer')
     </div>
+    
   </div>
   <!-- End: Content-->
+
+ 
 
   <div class="sidenav-overlay"></div>
   <div class="drag-target"></div>
 
-  {{-- include footer --}}
-  @include('panels/footer')
+  
 
 
   {{-- include default scripts --}}

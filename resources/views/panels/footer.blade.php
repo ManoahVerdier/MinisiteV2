@@ -1,9 +1,7 @@
 <!-- BEGIN: Footer-->
 <footer
-  class="footer footer-light {{ $configData['footerType'] === 'footer-hidden' ? 'd-none' : '' }} {{ $configData['footerType'] }}">
-  <div class="menu">
-    {{ menu('footer','bootstrap')}}
-  </div>
+  class="footer footer-light clearfix {{ $configData['footerType'] === 'footer-hidden' ? 'd-none' : '' }} {{ $configData['footerType'] }}">
+  
   <p class="clearfix mb-0">
     <span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT &copy;
       <script>
@@ -14,6 +12,9 @@
     </span>
     <span class="d-none d-md-inline-block"><i data-feather="award" class="text-primary"></i> <a href="verdier-developpement.fr">MVDI</a> </span>
   </p>
+  <div class="clearfix menu">
+    {{ menu('footer','bootstrap')}}
+  </div>
 </footer>
 <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
 <!-- END: Footer-->
