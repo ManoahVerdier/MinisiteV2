@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts/detachedLayoutMaster')
 
 @section('title', $page->title)
 @section('description', $page->description)
@@ -19,9 +19,7 @@ id="home-page"
     <div class="container">
         
         
-        <div class="row mt-4" id="product_carac">
-            <div class="col-12"><h1 class="border-bottom border-primary mb-3 text-center">{{ $page->title }}</h1></div>
-        </div>
+        
         <div class="row mt-4" id="product_carac">
             
             

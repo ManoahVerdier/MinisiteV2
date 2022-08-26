@@ -1,19 +1,10 @@
-@extends('layouts.app')
+@extends('layouts/detachedLayoutMaster')
 
-@section('title', env('APP_NAME')." - Documentation")
 @section('description', env('APP_NAME')." - Documentation")
 
 @section('body-attr')
 id="docs-page"
 @endsection
-
-{{-- Header --}}
-@section('header')
-    @include('layouts.partials.header.main')
-    @include('layouts.partials.header.mobile')
-@endsection
-
-{{-- Breadcrumbs --}}
 
 
 {{-- Content --}}
