@@ -329,8 +329,8 @@ class SiteController extends Controller
     }
 
     
-    public function redirect(){
-        return Socialite::driver('linkedin')->redirect();
+    public function redirect(Product $product){
+        return Socialite::driver('linkedin')->with(["slug"=>$product->slug])->redirect();
     }
 
     public function callback(){
@@ -368,6 +368,9 @@ class SiteController extends Controller
         }
 
         return true;
+    }
+    public function delComparison(){
+        session(['productsComparedLst'=>collect([])]);
     }
 
     public function comparatif(){

@@ -37578,6 +37578,17 @@ $('#accordion .btn-link').on('click', function () {
   $(this).parent().parent().parent().parent().toggleClass('inactive');
 });
 
+if ($('#emptyComparatif').length) {
+  $('#emptyComparatif').on('click', function () {
+    var $this = $(this);
+    $.ajax({
+      url: "/delComparison"
+    }).done(function (data) {
+      location.reload(true);
+    });
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

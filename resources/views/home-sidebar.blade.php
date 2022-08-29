@@ -1,6 +1,6 @@
 <div class="blog-sidebar my-2 my-lg-0">
     <!-- Search bar -->
-    <div class="blog-search">
+    <div class="blog-search d-none d-md-block">
       <form method="post" action="{{route('recherche')}}" class="">
         @csrf
         <div class="input-group input-group-merge">

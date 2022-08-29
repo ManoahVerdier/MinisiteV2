@@ -27,7 +27,7 @@
               </div>
               <div class="card-body">
                 
-                <h3 class="mb-2">{{ $product->title }}</h3>
+                <h2 class="h4 mb-2">{{ $product->title }}</h2>
                 <p class="card-text">
                   {!! \Illuminate\Support\Str::words($product->description,20," ...")  !!}
                 </p>
@@ -56,7 +56,7 @@
                     <div class="col-12 mb-4 mb-md-0">
                         <div class="w-75 mx-auto">
                         <i data-feather="award"></i>
-                        <h4 class="mt-2 mb-1">{{ $attribute->displayName }}</h4>
+                        <p class="h4 mt-2 mb-1">{{ $attribute->displayName }}</p>
                         <p class="card-text">{{ $product[$attribute->name] }}</p>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                 </p>
               </div> 
               <div class="card-body">
-                <h3 class="text-center">Aucun produit n'a encore été ajouté au comparatif !</h3>
+                <p class="h3 text-center">Aucun produit n'a encore été ajouté au comparatif !</p>
               </div>
             </div> 
           </div>
@@ -82,5 +82,18 @@
       </div>
     </div>
   </div>
+  
+  @if($products->count() > 0)
+    <div class="row pricing-card">
+      <div class="offset-md-3 col-md-6 col-12">
+        <button class="btn btn-block btn-danger" id="emptyComparatif">Vider le comparatif</button>
+      </div>
+    </div>
+  @endif
 </section>
+@endsection
+
+@section('page-script')
+    <!-- Page js files -->
+    <script src="{{ asset(mix('js/app.js')) }}"></script>
 @endsection

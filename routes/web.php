@@ -85,6 +85,7 @@ Route::get('/auth/redirect', 'SiteController@redirect');
 Route::get('/auth/callback','SiteController@callback');
 
 Route::get('/addComparison/{id}','SiteController@addComparison')->name("addComparison");
+Route::get('/delComparison','SiteController@delComparison')->name("delComparison");
 
 Route::get('/comparatif','SiteController@comparatif')->name("comparatif");
 

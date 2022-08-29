@@ -33,7 +33,7 @@ id="home-page"
                 alt="Blog Detail Pic"
                 />
                 <div class="card-body">
-                <h4 class="card-title">{{ $p->title }}</h4>
+                <h2 class="h4 card-title">{{ $p->title }}</h2>
                 <div class="my-1 py-25">
                     @if(! is_null($p->category))
                         @if(! is_null($p->category->parent_category))
@@ -53,7 +53,7 @@ id="home-page"
                 <p class="card-text mb-2">
                     {!! $p->description !!}
                 </p>
-                <h4 class="mb-75">Caractéristiques</h4>
+                <p class="h4 mb-75">Caractéristiques</p>
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <ul class="product-features list-unstyled">
@@ -81,7 +81,7 @@ id="home-page"
                     <div class="d-flex align-items-center">
                         <ul class="unstyled-list list-inline pl-0 pl-md-1">
                             @for($i=1;$i<=5;$i++)
-                                @if($i<=$p->stars)
+                                @if($i<=$p->rating)
                                     <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
                                 @else 
                                     <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto unfilled-star"></i></li>

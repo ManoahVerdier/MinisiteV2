@@ -5,16 +5,16 @@
   <div class="sidebar-shop">
     <div class="row">
       <div class="col-sm-12">
-        <h6 class="filter-heading d-none d-lg-block">Filtres</h6>
+        <p class="h6 filter-heading d-none d-lg-block">Filtres</p>
       </div>
     </div>
     <div class="card">
       <div class="card-body">
-        <h4 class="filter-heading text-center d-block d-lg-none">Filtres</h4>
+        <p class="h4 filter-heading text-center d-block d-lg-none">Filtres</p>
         @if(! $isCateg)
           <!-- Categories Starts -->
           <div id="product-categories">
-            <h6 class="filter-title">Catégories</h6>
+            <p class="h6 filter-title">Catégories</p>
             <ul class="list-unstyled categories-list">
               @foreach(\App\Category::where("parent_id",null)->get() as $categ)
                 <li>
@@ -43,7 +43,7 @@
         @foreach($filtersNum as $filter)
           @if($filter->min < $filter->max)
             <div class="price-slider" >
-              <h6 class="filter-title">{{ $filter->displayName}}</h6>
+              <p class="h6 filter-title">{{ $filter->displayName}}</p>
               <div class="price-slider px-1" >
                 <div class="{{ $filter->name}}-slider slider range-slider mt-2" id="price-slider" min="{{ $filter->min }}" max="{{ $filter->max }}" name="{{ $filter->name }}"></div>
               </div>
@@ -56,14 +56,14 @@
 
         <!-- Attributes starts -->
         <div class="attributes mt-5">
-          <h6 class="filter-title">Attributs</h6>
+          <p class="h6 filter-title">Attributs</p>
           <ul class="list-unstyled brand-list">
             @foreach($filtersBool as $filter)
             <li>
               <div class="form-check">
                 <!--<input type="checkbox" wire:click="$emit('boolUpdated','{{ $filter->name }}')" class="form-check-input" id="check_{{ $filter->name }}" />-->
                 <input type="checkbox" name="{{ $filter->name }}" class="checkboxUpdate form-check-input" id="check_{{ $filter->name }}" />
-                <label class="form-check-label" for="productBrand1">{{ $filter->displayName }}</label>
+                <label class="form-check-label" for="check_{{ $filter->name }}">{{ $filter->displayName }}</label>
               </div>
               <span class="number"></span>
             </li>
@@ -75,7 +75,7 @@
 
         <!-- Rating starts -->
         <div id="ratings">
-          <h6 class="filter-title">Notes</h6>
+          <p class="h6 filter-title">Notes</p>
           <div class="ratings-list flex-column">
             <div class="form-check">
               <input wire:model.live="rate" type="radio" id="rate0" name="rate-filter" class="rateUpdate form-check-input" value="0" />
@@ -197,7 +197,7 @@
                 <a class="dropdown-item orderUpdate @if($orderBy="rate" && $orderDirection="desc") selected @endif" href="#" orderBy="rate" orderDirection="desc">Notes décroissantes</a>
               </div>
             </div>
-            <div class="btn-group" role="group">
+            <div class="btn-group d-none d-md-flex" role="group">
               <input type="radio" class="btn-check" name="radio_options" id="radio_option1" autocomplete="off" checked  />
               <label class="btn btn-icon btn-outline-primary view-btn grid-view-btn" for="radio_option1">
                 <svg data-v-15eba8c6="" xmlns="http://www.w3.org/2000/svg" width="20px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="font-medium-3 feather feather-grid"><rect data-v-15eba8c6="" x="3" y="3" width="7" height="7"></rect><rect data-v-15eba8c6="" x="14" y="3" width="7" height="7"></rect><rect data-v-15eba8c6="" x="14" y="14" width="7" height="7"></rect><rect data-v-15eba8c6="" x="3" y="14" width="7" height="7"></rect></svg>                
@@ -272,7 +272,7 @@
             <div class="item-rating">
               <ul class="unstyled-list list-inline">
                 @for($i=1;$i<=5;$i++)
-                        @if($i<=$product->reviews->avg("global_rate"))
+                        @if($i<=$product->rating)
                             <li class="ratings-list-item">
                               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star h-auto w-auto  text-primary fill-current"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                             </li>
@@ -285,14 +285,14 @@
               </ul>
             </div>
             <div>
-              <h6 class="item-price">{{ isset($product->prix) ? $product->prix." €" : "" }}</h6>
+              <h2 class="h6 item-price">{{ isset($product->prix) ? $product->prix." €" : "" }}</h2>
             </div>
           </div>
-          <h6 class="item-name">
+          <p class="h6 item-name">
             <a class="text-body" href="{{ $product->link }}">{{ $product->title }}</a>
             <span class="card-text item-company">De <a href="#" class="company-name">{{ $product->brand }}</a></span>
             
-          </h6>
+          </p>
           <p class="card-text item-description">
             {!! \Illuminate\Support\Str::words($product->description,30," ...") !!}
           </p>

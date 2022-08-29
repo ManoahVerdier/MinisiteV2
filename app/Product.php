@@ -39,6 +39,10 @@ class Product extends Model
 
     public function getRatingAttribute()
     {
-        return $this->reviews->avg("global_rate");
+        if($this->reviews->count()>0) {
+            return $this->reviews->avg("global_rate");
+        } else {
+            return 5;
+        }
     }
 }

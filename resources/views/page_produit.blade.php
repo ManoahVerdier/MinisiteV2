@@ -55,10 +55,10 @@ id="home-page"
             <h4>{{ $product->title }}</h4>
             <span class="card-text item-company">De <a href="#" class="company-name">{{ $product->brand }}</a></span>
             <div class="ecommerce-details-price d-flex flex-wrap mt-1">
-              <h4 class="item-price mr-1">{{ $product->prix ?? "" }} €</h4>
+              <div class="item-price mr-1 h4">{{ $product->prix ?? "" }} €</div>
                 <ul class="unstyled-list list-inline pl-1 border-left">
                     @for($i=1;$i<=5;$i++)
-                        @if($i<=$product->reviews->avg("global_rate"))
+                        @if($i<=$product->rating)
                             <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
                         @else 
                             <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto unfilled-star"></i></li>
@@ -153,7 +153,7 @@ id="home-page"
         <!-- Related Products starts -->
         <div class="card-body">
             <div class="mt-4 mb-2 text-center">
-            <h4>Vous aimerez aussi...</h4>
+            <p class="h4">Vous aimerez aussi...</p>
             <p class="card-text">{{ $product->category->name }}</p>
             </div>
             <div class="swiper-responsive-breakpoints swiper-container px-4 py-2">
@@ -172,7 +172,7 @@ id="home-page"
                             <div class="item-meta">
                             <ul class="unstyled-list list-inline mb-25">
                                 @for($i=1;$i<=5;$i++)
-                                    @if($i<=$p->stars)
+                                    @if($i<=$p->rating)
                                         <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
                                     @else 
                                         <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto unfilled-star"></i></li>
@@ -201,7 +201,7 @@ id="home-page"
         @if($product->reviews->count()>0)
         <!-- Reviews Products starts -->
         <div class="mt-4 mb-2 text-center">
-          <h4>Avis client</h4>
+          <p class="h4">Avis client</p>
       </div>
       <div class="col-12 mt-1" id="blogComment">
           @foreach($product->reviews as $r) 
@@ -238,7 +238,7 @@ id="home-page"
                 <div class="col-md-4 col-12">
                     <div class="card">
                       <div class="card-header justify-content-center">
-                        <h4 class="card-title text-center">Synthèse des notes</h4>
+                        <p class="h4 card-title text-center">Synthèse des notes</h4>
                       </div>
                       <div class="card-body">
                         <div 
@@ -278,7 +278,7 @@ id="home-page"
                 <div class="col-md-6 col-12">
                   <div class="card mb-1 align-items-center">
                     <div class="card-header pt-0 pb-50">
-                      <h4 class="card-title">Note globale</h4>
+                      <p class="h4 card-title">Note globale</h4>
                     </div>
                     <div class="card-body pb-50">
                       <div class="basic-ratings ratingStars" starWidth="26px"></div>
@@ -289,7 +289,7 @@ id="home-page"
                     <div class="col-md-6 col-12">
                       <div class="card mb-1 align-items-center">
                         <div class="card-header pt-0 pb-50">
-                          <h4 class="card-title">Service client</h4>
+                          <p class="h4 card-title">Service client</h4>
                         </div>
                         <div class="card-body pb-50">
                           <div class="basic-ratings ratingStars"></div>
@@ -298,7 +298,7 @@ id="home-page"
                       </div>
                       <div class="card mb-1 align-items-center">
                         <div class="card-header pt-0 pb-50">
-                          <h4 class="card-title">Fonctionnalités</h4>
+                          <p class="h4 card-title">Fonctionnalités</h4>
                         </div>
                         <div class="card-body pb-50">
                           <div class="basic-ratings ratingStars"></div>
@@ -309,7 +309,7 @@ id="home-page"
                     <div class="col-md-6 col-12">
                       <div class="card mb-1 align-items-center">
                         <div class="card-header pt-0 pb-50">
-                          <h4 class="card-title">Prix</h4>
+                          <p class="h4 card-title">Prix</h4>
                         </div>
                         <div class="card-body pb-50">
                           <div class="basic-ratings ratingStars"></div>
@@ -318,7 +318,7 @@ id="home-page"
                       </div>
                       <div class="card mb-1 align-items-center">
                         <div class="card-header pt-0 pb-50">
-                          <h4 class="card-title">Prise en main</h4>
+                          <p class="h4 card-title">Prise en main</h4>
                         </div>
                         <div class="card-body pb-50">
                           <div class="basic-ratings ratingStars"></div>
