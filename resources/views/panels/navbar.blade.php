@@ -49,9 +49,9 @@
   </ul>
   <span class="d-md-none brand-logo mx-auto" style="padding-right:70px">
     @if(App\Homepage::first()->logo??false)
-      <img class=" mx-auto" src="{{  asset("storage/".App\Homepage::first()->logo)  }}"/>
+      <img class=" mx-auto" src="{{  asset("storage/".App\Homepage::first()->logo)  }}" style="max-height:50px"/>
     @else 
-      <img class=" mx-auto" src="{{asset('img/header/logo.png')}}"/>
+      <img class=" mx-auto" src="{{asset('img/header/logo.png')}}" style="max-height:50px"/>
     @endif
   </span>
 </div>
