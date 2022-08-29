@@ -47,7 +47,8 @@ class SiteController extends Controller
         $produits = Product::all()->take(5);
         $produitsRecents = Product::all()->sortByDesc("created_at")->take(5);
         $pageConfigs = ['contentLayout' => 'content-detached-right-sidebar', 'bodyClass' => 'content-detached-right-sidebar'];
-
+        $user = Socialite::driver('linkedin')->user();
+        dd($user);
         return view('home', compact('hp','produits','produitsRecents','pageConfigs'));
     }
 
