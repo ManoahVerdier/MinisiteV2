@@ -330,7 +330,8 @@ class SiteController extends Controller
 
     
     public function redirect($slug){
-        return Socialite::driver('linkedin')->with(["slug"=>$slug])->redirect();
+        session("redirect",route("product",["slug"=>$slug]));
+        return Socialite::driver('linkedin')->redirect();
     }
 
     public function callback(){
