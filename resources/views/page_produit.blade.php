@@ -338,6 +338,7 @@ id="home-page"
           </div>
         </div>
       </div>
+      <a href="{{ route("auth.redirect",["slug"=>$product->slug]) }}" class="btn btn-primary">Se connecter avec LinkedIn</a>
       <!--/ Leave a Blog Comment -->
     </div>
     

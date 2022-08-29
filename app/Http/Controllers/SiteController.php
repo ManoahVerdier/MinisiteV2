@@ -329,8 +329,8 @@ class SiteController extends Controller
     }
 
     
-    public function redirect(Product $product){
-        return Socialite::driver('linkedin')->with(["slug"=>$product->slug])->redirect();
+    public function redirect($slug){
+        return Socialite::driver('linkedin')->with(["slug"=>$slug])->redirect();
     }
 
     public function callback(){
