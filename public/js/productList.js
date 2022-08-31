@@ -184,6 +184,7 @@ $(function () {
         name = $(element).attr('name');
       }
 
+      $('.body-content-overlay').trigger('click');
       Livewire.emit("sliderUpdated", {
         values: values,
         name: name
@@ -194,21 +195,20 @@ $(function () {
   $('.checkboxUpdate').each(function (index, element) {
     $(this).on("click", function () {
       Livewire.emit("boolUpdated", $(this).attr("name"));
+      $('.body-content-overlay').trigger('click');
     });
   }); //Mise à jour d'une catégorie
 
   $('.categUpdate').each(function (index, element) {
     $(this).on("click", function () {
       Livewire.emit("categUpdated", $(this).attr("value"));
+      $('.body-content-overlay').trigger('click');
     });
   }); //Mise à jour du tri
 
   $('.orderUpdate').each(function (index, element) {
     $(this).on("click", function () {
-      console.log({
-        orderBy: $(this).attr("orderBy"),
-        orderDirection: $(this).attr("orderDirection")
-      });
+      $('.body-content-overlay').trigger('click');
       Livewire.emit("orderUpdated", {
         orderBy: $(this).attr("orderBy"),
         orderDirection: $(this).attr("orderDirection")
@@ -218,8 +218,8 @@ $(function () {
 
   $('.rateUpdate').each(function (index, element) {
     $(this).on("click", function () {
-      console.log($(this).attr("value"));
       Livewire.emit("rateUpdated", $(this).attr("value"));
+      $('.body-content-overlay').trigger('click');
     });
   }); //Réinitialisation
 
