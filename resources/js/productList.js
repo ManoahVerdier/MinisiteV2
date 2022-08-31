@@ -173,8 +173,7 @@ if (comparison.length) {
     $.ajax({
       url: "/addComparison/" + $(this).attr("product-id")
     }).done(function (data) {
-      $this.toggleClass("btn-outline-primary");
-      $this.toggleClass("btn-primary");
+      
       $this.find('svg').toggleClass('text-white');
       if (data) {
         toastr['success']('', 'Ajouté au comparateur', {
@@ -183,6 +182,9 @@ if (comparison.length) {
           toastClass: "toast-title toast-primary",
           titleClass: "text-blank"
         });
+        $this.toggleClass("bg-light-primary").toggleClass("text-white").toggleClass("text-primary");
+        $this.find("span").text("Comparé");
+        $this.find("svg").toggleClass("text-white").toggleClass("text-primary");
       } else {
         toastr['success']('', 'Retiré du comparateur', {
           closeButton: true,
@@ -190,6 +192,9 @@ if (comparison.length) {
           toastClass: "toast-title toast-primary",
           titleClass: "text-blank"
         });
+        $this.toggleClass("bg-light-primary").toggleClass("text-white").toggleClass("text-primary");
+        $this.find("span").text("Comparer");
+        $this.find("svg").toggleClass("text-white").toggleClass("text-primary");
         $this.trigger("blur");
       }
     })

@@ -262,9 +262,6 @@
               alt="img-placeholder"
             />
           </a>
-          <a href="#" class="comparison-list position-absolute btn btn-circle float-right btn-{{ $compared?"primary":"outline-primary" }} btn-comparison me-0 mr-sm-1 mb-1 mb-sm-0"  product-id="{{ $product->id }}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{{ $compared?"text-white":"" }} feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-          </a>
         </div>
         
         <div class="card-body">
@@ -304,10 +301,12 @@
               <h4 class="item-price">{{ isset($product->prix) ? $product->prix." €" : "" }}</h4>
             </div>
           </div>
-          <a href="#" class=" mx-auto btn w-100 btn-{{ $compared?"light-primary text-white btn-relief-primary":"outline-primary bg-light-primary border-0" }} btn-comparison "  product-id="{{ $product->id }}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{{ $compared?"text-primary":"text-primary" }} feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-            <span>Comparer</span>
-          </a>
+          <div class="w-100">
+            <a href="#" class=" mx-auto btn btn-relief-primary {{ $compared?"bg-light-primary text-primary":"" }} btn-comparison mb-md-1"  product-id="{{ $product->id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{{ $compared?"text-primary":"text-white" }} feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              <span>{{ $compared?"Comparé":"Comparer" }}</span>
+            </a>
+          </div>
           <a href="{{route("produit",$product->slug)}}" class="btn btn-light btn-wishlist">
             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
             <span>Lire l'article</span>
