@@ -261,88 +261,90 @@ id="home-page"
       
     </div>
     </div>
-    @if($user ?? false)
+    
     
       <!-- Leave a Blog Comment -->
       <div class="col-12 mt-1">
         <h6 class="section-label mt-25">Ajouter un avis</h6>
         <div class="card">
           <div class="card-body">
-            <form action="{{ route("review") }}" class="form" method="POST">
-              @csrf 
-              <div class="row">
-                <div class="col-md-6 col-12">
-                  <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Nom" name="name" value="{{ $user->name }}"/>
+            @if($user ?? false)
+              <form action="{{ route("review") }}" class="form" method="POST">
+                @csrf 
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <div class="mb-2">
+                      <input type="text" class="form-control" placeholder="Nom" name="name" value="{{ $user->name }}"/>
+                    </div>
+                    <textarea class="form-control mb-2" rows="6" placeholder="Commentaire" name="comment"></textarea>
                   </div>
-                  <textarea class="form-control mb-2" rows="6" placeholder="Commentaire" name="comment"></textarea>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="card mb-1 align-items-center">
-                    <div class="card-header pt-0 pb-50">
-                      <p class="h4 card-title">Note globale</h4>
-                    </div>
-                    <div class="card-body pb-50">
-                      <div class="basic-ratings ratingStars" starWidth="26px"></div>
-                      <input type="hidden" name="global_rate" value="5" class="counter"/>
-                    </div>
-                  </div>  
-                  <div class="row">
-                    <div class="col-md-6 col-12">
-                      <div class="card mb-1 align-items-center">
-                        <div class="card-header pt-0 pb-50">
-                          <p class="h4 card-title">Service client</h4>
+                  <div class="col-md-6 col-12">
+                    <div class="card mb-1 align-items-center">
+                      <div class="card-header pt-0 pb-50">
+                        <p class="h4 card-title">Note globale</h4>
+                      </div>
+                      <div class="card-body pb-50">
+                        <div class="basic-ratings ratingStars" starWidth="26px"></div>
+                        <input type="hidden" name="global_rate" value="5" class="counter"/>
+                      </div>
+                    </div>  
+                    <div class="row">
+                      <div class="col-md-6 col-12">
+                        <div class="card mb-1 align-items-center">
+                          <div class="card-header pt-0 pb-50">
+                            <p class="h4 card-title">Service client</h4>
+                          </div>
+                          <div class="card-body pb-50">
+                            <div class="basic-ratings ratingStars"></div>
+                            <input type="hidden" name="client_service_rate" value="5" class="counter"/>
+                          </div>
                         </div>
-                        <div class="card-body pb-50">
-                          <div class="basic-ratings ratingStars"></div>
-                          <input type="hidden" name="client_service_rate" value="5" class="counter"/>
+                        <div class="card mb-1 align-items-center">
+                          <div class="card-header pt-0 pb-50">
+                            <p class="h4 card-title">Fonctionnalités</h4>
+                          </div>
+                          <div class="card-body pb-50">
+                            <div class="basic-ratings ratingStars"></div>
+                            <input type="hidden" name="functionalities_rate" value="5" class="counter"/>
+                          </div>
                         </div>
                       </div>
-                      <div class="card mb-1 align-items-center">
-                        <div class="card-header pt-0 pb-50">
-                          <p class="h4 card-title">Fonctionnalités</h4>
+                      <div class="col-md-6 col-12">
+                        <div class="card mb-1 align-items-center">
+                          <div class="card-header pt-0 pb-50">
+                            <p class="h4 card-title">Prix</h4>
+                          </div>
+                          <div class="card-body pb-50">
+                            <div class="basic-ratings ratingStars"></div>
+                            <input type="hidden" name="price_rate" value="5" class="counter"/>
+                          </div>
                         </div>
-                        <div class="card-body pb-50">
-                          <div class="basic-ratings ratingStars"></div>
-                          <input type="hidden" name="functionalities_rate" value="5" class="counter"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                      <div class="card mb-1 align-items-center">
-                        <div class="card-header pt-0 pb-50">
-                          <p class="h4 card-title">Prix</h4>
-                        </div>
-                        <div class="card-body pb-50">
-                          <div class="basic-ratings ratingStars"></div>
-                          <input type="hidden" name="price_rate" value="5" class="counter"/>
-                        </div>
-                      </div>
-                      <div class="card mb-1 align-items-center">
-                        <div class="card-header pt-0 pb-50">
-                          <p class="h4 card-title">Prise en main</h4>
-                        </div>
-                        <div class="card-body pb-50">
-                          <div class="basic-ratings ratingStars"></div>
-                          <input type="hidden" name="interface_rate" value="5" class="counter"/>
+                        <div class="card mb-1 align-items-center">
+                          <div class="card-header pt-0 pb-50">
+                            <p class="h4 card-title">Prise en main</h4>
+                          </div>
+                          <div class="card-body pb-50">
+                            <div class="basic-ratings ratingStars"></div>
+                            <input type="hidden" name="interface_rate" value="5" class="counter"/>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <input type="hidden" name="product_id" value="{{ $product->id }}"/>
+                  
+                  <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                  </div>
                 </div>
-                <input type="hidden" name="product_id" value="{{ $product->id }}"/>
-                
-                <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-primary">Envoyer</button>
-                </div>
-              </div>
-            </form>
+              </form>
+              @else 
+            <a href="{{ route("auth.redirect",["slug"=>$product->slug]) }}" class="btn btn-primary">Se connecter avec LinkedIn</a>
+            @endif
           </div>
         </div>
       </div>
-     @else 
-      <a href="{{ route("auth.redirect",["slug"=>$product->slug]) }}" class="btn btn-primary">Se connecter avec LinkedIn</a>
-      @endif
+     
       <!--/ Leave a Blog Comment -->
     </div>
     
