@@ -204,7 +204,7 @@ class SiteController extends Controller
         $product = Product::where('slug', $slug)->firstOrFail();
         $product->stars=4;
         $compared=false;
-        session("redirect",route("produit",["slug"=>$slug]));
+        session(["product_slug"=>$slug]);
         if(session()->has("productsComparedLst")) {
             $productsCompared = session("productsComparedLst");
             if($productsCompared->contains("id",$product->id)){
@@ -329,14 +329,14 @@ class SiteController extends Controller
     }
 
     
-    public function redirect($slug=""){
-        //session("redirect",route("produit",["slug"=>$slug]));
+    public function redirect(){
         return Socialite::driver('linkedin')->redirect();
     }
 
     public function callback(Request $request){
         $user = Socialite::driver('linkedin')->user();
-        dd($user);
+        session(["user"=>$user]);
+        return redirect()->route("produit",["slug"=>session("product_slug")]);
     }
 
     public function addComparison($id){
