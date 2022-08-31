@@ -339,7 +339,7 @@ id="home-page"
                 </div>
               </form>
               @else 
-            <a href="{{ route("auth.redirect",["slug"=>$product->slug]) }}" class="btn btn-primary">Se connecter avec LinkedIn</a>
+            <a href="{{ route("auth.redirect",["slug"=>$product->slug]) }}" class="btn btn-primary mx-auto">Se connecter avec LinkedIn</a>
             @endif
           </div>
         </div>
