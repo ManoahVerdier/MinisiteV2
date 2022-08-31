@@ -211,7 +211,7 @@ id="home-page"
                     <div class="card-body">
                         <div class="d-flex align-items-start">
                             <div class="avatar mr-75">
-                                <img src="{{asset('images/portrait/small/avatar-s-9.jpg')}}" width="38" height="38" alt="Avatar" />
+                                <img src="{{$r->image}}" width="38" height="38" alt="Avatar" />
                             </div>
                             <div class="author-info">
                                 <h6 class="fw-bolder mb-25">{{ $r->name }}</h6>
