@@ -335,7 +335,7 @@ class SiteController extends Controller
     }
 
     public function callback(Request $request){
-        $user = Socialite::driver('linkedin')->userFromToken($request->code);
+        $user = Socialite::driver('linkedin')->user();
         dd($request->code);
     }
 
