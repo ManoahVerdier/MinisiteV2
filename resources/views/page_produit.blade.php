@@ -262,6 +262,7 @@ id="home-page"
     </div>
     </div>
     @if($user ?? false)
+    @php dd($user); @endphp
       <!-- Leave a Blog Comment -->
       <div class="col-12 mt-1">
         <h6 class="section-label mt-25">Ajouter un avis</h6>
