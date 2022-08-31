@@ -213,6 +213,7 @@ class SiteController extends Controller
         }
 
         $user = session("user");
+        dd($user);
         return view('page_produit', compact('product','compared','user'));
     }
 
@@ -395,7 +396,7 @@ class SiteController extends Controller
 
     public function addReview(Request $request){
         $review = Review::create($request->except("_token"));
-
+        
         return redirect()->route("produit",["slug"=>Product::find($review->product_id)->slug]);
     }
 }
