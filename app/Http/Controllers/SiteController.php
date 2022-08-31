@@ -204,7 +204,7 @@ class SiteController extends Controller
         $product = Product::where('slug', $slug)->firstOrFail();
         $product->stars=4;
         $compared=false;
-        session("redirect",route("produit",["slug"=>$slug]));
+        //session("redirect",route("produit",["slug"=>$slug]));
         if(session()->has("productsComparedLst")) {
             $productsCompared = session("productsComparedLst");
             if($productsCompared->contains("id",$product->id)){
