@@ -282,7 +282,7 @@ id="home-page"
                     </div>
                     <div class="card-body pb-50">
                       <div class="basic-ratings ratingStars" starWidth="26px"></div>
-                      <input type="hidden" name="global_rate" value="0" class="counter"/>
+                      <input type="hidden" name="global_rate" value="5" class="counter"/>
                     </div>
                   </div>  
                   <div class="row">
@@ -293,7 +293,7 @@ id="home-page"
                         </div>
                         <div class="card-body pb-50">
                           <div class="basic-ratings ratingStars"></div>
-                          <input type="hidden" name="client_service_rate" value="0" class="counter"/>
+                          <input type="hidden" name="client_service_rate" value="5" class="counter"/>
                         </div>
                       </div>
                       <div class="card mb-1 align-items-center">
@@ -302,7 +302,7 @@ id="home-page"
                         </div>
                         <div class="card-body pb-50">
                           <div class="basic-ratings ratingStars"></div>
-                          <input type="hidden" name="functionalities_rate" value="0" class="counter"/>
+                          <input type="hidden" name="functionalities_rate" value="5" class="counter"/>
                         </div>
                       </div>
                     </div>
@@ -313,7 +313,7 @@ id="home-page"
                         </div>
                         <div class="card-body pb-50">
                           <div class="basic-ratings ratingStars"></div>
-                          <input type="hidden" name="price_rate" value="0" class="counter"/>
+                          <input type="hidden" name="price_rate" value="5" class="counter"/>
                         </div>
                       </div>
                       <div class="card mb-1 align-items-center">
@@ -322,7 +322,7 @@ id="home-page"
                         </div>
                         <div class="card-body pb-50">
                           <div class="basic-ratings ratingStars"></div>
-                          <input type="hidden" name="interface_rate" value="0" class="counter"/>
+                          <input type="hidden" name="interface_rate" value="5" class="counter"/>
                         </div>
                       </div>
                     </div>
