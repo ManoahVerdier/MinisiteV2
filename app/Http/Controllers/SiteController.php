@@ -335,7 +335,7 @@ class SiteController extends Controller
     }
 
     public function callback(){
-        $user = Socialite::driver('linkedin')->user();
+        //$user = Socialite::driver('linkedin')->user();
         //dd($user);
     }
 
