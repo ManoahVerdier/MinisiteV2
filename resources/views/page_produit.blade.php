@@ -262,7 +262,7 @@ id="home-page"
     </div>
     </div>
     @if($user ?? false)
-    @php dd($user); @endphp
+    
       <!-- Leave a Blog Comment -->
       <div class="col-12 mt-1">
         <h6 class="section-label mt-25">Ajouter un avis</h6>
@@ -273,7 +273,7 @@ id="home-page"
               <div class="row">
                 <div class="col-md-6 col-12">
                   <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Nom" name="name" value="{{ $user->lastName }}"/>
+                    <input type="text" class="form-control" placeholder="Nom" name="name" value="{{ $user->name }}"/>
                   </div>
                   <textarea class="form-control mb-2" rows="6" placeholder="Commentaire" name="comment"></textarea>
                 </div>
