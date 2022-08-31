@@ -1,5 +1,4 @@
 
-
 @section('content-sidebar')
   <!-- ProductList Sidebar Starts -->
   <div class="sidebar-shop">
@@ -79,7 +78,7 @@
           <div class="ratings-list flex-column">
             <div class="form-check">
               <input wire:model.live="rate" type="radio" id="rate0" name="rate-filter" class="rateUpdate form-check-input" value="0" />
-              <label href="#" class="mb-0">
+              <label href="#" class="mb-0" for="rate0">
                 <ul class="unstyled-list list-inline">
                   <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
                   <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
@@ -91,7 +90,7 @@
             </div>
             <div class="form-check">
               <input wire:model.live="rate" type="radio" id="rate1" name="rate-filter" class="rateUpdate form-check-input" value="1" />
-              <label href="#" class="mb-0">
+              <label href="#" class="mb-0" for="rate1">
                 <ul class="unstyled-list list-inline">
                   <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
                   <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
@@ -103,7 +102,7 @@
             </div>
             <div class="form-check">
               <input wire:model.live="rate" type="radio" id="rate2" name="rate-filter" class="rateUpdate form-check-input" value="2" />
-              <label href="#" class="mb-0">
+              <label href="#" class="mb-0" for="rate2">
                 <ul class="unstyled-list list-inline">
                   <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
                   <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
@@ -115,7 +114,7 @@
             </div> 
             <div class="form-check">
               <input wire:model.live="rate" type="radio" id="rate3" name="rate-filter" class="rateUpdate form-check-input" value="3" />
-              <label href="#" class="mb-0">
+              <label href="#" class="mb-0" for="rate3">
                 <ul class="unstyled-list list-inline">
                   <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
                   <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
@@ -127,7 +126,7 @@
             </div>
             <div class="form-check">
               <input wire:model.live="rate" type="radio" id="rate4" name="rate-filter" class="rateUpdate form-check-input" value="4" />
-              <label href="#" class="mb-0" >
+              <label href="#" class="mb-0"  for="rate4">
                 <ul class="unstyled-list list-inline">
                   <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
                   <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
@@ -139,7 +138,7 @@
             </div>
             <div class="form-check">
               <input wire:model.live="rate" type="radio" id="rate0" name="rate-filter" class="rateUpdate form-check-input" value="5" />
-              <label href="#" class="mb-0">
+              <label href="#" class="mb-0" for="rate5">
                 <ul class="unstyled-list list-inline">
                   <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
                   <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
@@ -163,9 +162,12 @@
     </div>
   </div>
   <!-- Ecommerce Sidebar Ends -->
+  
 @endsection
 
+
 <div class="content">
+  
   <!-- Début de l'entête des produits -->
   <section id="products-header">
     <div class="row">

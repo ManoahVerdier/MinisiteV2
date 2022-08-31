@@ -52,7 +52,7 @@ id="home-page"
             </div>
           </div>
           <div class="col-12 col-md-7">
-            <h4>{{ $product->title }}</h4>
+            <h1 class="h4">{{ $product->title }}</h1>
             <span class="card-text item-company">De <a href="#" class="company-name">{{ $product->brand }}</a></span>
             <div class="ecommerce-details-price d-flex flex-wrap mt-1">
               <div class="item-price mr-1 h4">{{ $product->prix ?? "" }} €</div>
@@ -111,7 +111,7 @@ id="home-page"
         <!-- Item features starts -->
         <div class="item-features">
             <div class="row text-center">
-                @forelse(\App\Attribute::where("type","rich_text_box")->get() as $attribute)
+                @foreach(\App\Attribute::where("type","rich_text_box")->get() as $attribute)
                     <div class="col-12 mb-4 mb-md-0">
                         <div class="w-75 mx-auto">
                         <i data-feather="award"></i>
@@ -119,11 +119,11 @@ id="home-page"
                         <p class="card-text">{{ $product[$attribute->name] }}</p>
                         </div>
                     </div>
-                @empty 
-                    <div class="col-12 mb-4 mb-md-0">
-                        {{ $product->meta_desc }}
-                    </div>
-                @endforelse 
+                @endforeach 
+                <div class="col-12 mb-4 mb-md-0">
+                    <h2>{{ $product->meta_desc }}</h2>
+                </div>
+            
             </div>
         </div>
         <!-- Item features ends -->

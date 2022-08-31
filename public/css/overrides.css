@@ -142,7 +142,7 @@ footer .menu ul li:not(:first-child)::before {
 }
 
 .collapse-icon [data-toggle=collapse]:before {
-  left: 1rem;
+  left: 0rem;
 }
 
 .collapse-icon [data-toggle=collapse]:before {
@@ -240,6 +240,10 @@ footer .menu ul li:not(:first-child)::before {
 
   .ecommerce-application .sidebar .card {
     height: 100%;
+  }
+
+  .breadcrumbs-top .content-header-title {
+    display: inherit !important;
   }
 }
 

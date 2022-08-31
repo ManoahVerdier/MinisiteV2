@@ -213,7 +213,7 @@ class SiteController extends Controller
         }
 
         $user = session("user");
-        
+       // $title = $product->title;
         return view('page_produit', compact('product','compared','user'));
     }
 
@@ -234,11 +234,14 @@ class SiteController extends Controller
             ['link' => "/", 'name' => "Accueil"], ['name' => "Tous les produits"]
         ];
 
-
+        $title = Homepage::first()->products_title;
+        $subtitle = Homepage::first()->products_subtitle;
         return view('/products', [
             'pageConfigs' => $pageConfigs,
             'breadcrumbs' => $breadcrumbs,
-            'search'      => $search
+            'search'      => $search,
+            'title'       => $title,
+            'subtitle'       => $subtitle
         ]);
     }
 

@@ -87,7 +87,7 @@ $(function () {
     )
     //Définition du comportement à la mise à jour (appel livewire)  
     .on(
-      'update',
+      'end',
       function (values) {
         var name = "init";
 
@@ -95,11 +95,13 @@ $(function () {
         {
           name = $(element).attr('name');
         }
-        $('.body-content-overlay').trigger('click');
+        
         Livewire.emit("sliderUpdated", { values: values, name: name });
+        $('.body-content-overlay').trigger('click');  
       }
     )
   });
+  
 
   // Mise à jour d'une checkbox
   $('.checkboxUpdate').each(function (index, element) {

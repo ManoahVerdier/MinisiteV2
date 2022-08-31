@@ -75,6 +75,8 @@ data-asset-path="{{ asset('/')}}">
 
   @livewireScripts
 
+  @yield("additionnal-js")
+
 </body>
 
 </html>

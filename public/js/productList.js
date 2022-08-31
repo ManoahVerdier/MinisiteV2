@@ -177,18 +177,18 @@ $(function () {
         max: parseInt($(this).attr('max'))
       }
     }) //Définition du comportement à la mise à jour (appel livewire)  
-    .on('update', function (values) {
+    .on('end', function (values) {
       var name = "init";
 
       if ($(element).attr('name') !== undefined) {
         name = $(element).attr('name');
       }
 
-      $('.body-content-overlay').trigger('click');
       Livewire.emit("sliderUpdated", {
         values: values,
         name: name
       });
+      $('.body-content-overlay').trigger('click');
     });
   }); // Mise à jour d'une checkbox
 

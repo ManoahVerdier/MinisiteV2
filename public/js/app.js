@@ -37576,6 +37576,7 @@ __webpack_require__.r(__webpack_exports__);
 $('#accordion .btn-link').on('click', function () {
   $(this).parent().parent().parent().parent().toggleClass('active');
   $(this).parent().parent().parent().parent().toggleClass('inactive');
+  $(this).toggleClass("text-white");
 });
 
 if ($('#emptyComparatif').length) {

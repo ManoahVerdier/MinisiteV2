@@ -13,7 +13,7 @@
                 <img class=" mx-auto" src="{{asset('img/header/logo.png')}}"/>
               @endif
             </span>
-            <h2 class="brand-text mb-0">{{ App\Homepage::first()->title }}</h2>
+            <p class="h2 brand-text mb-0">{{ App\Homepage::first()->titre_site }}</p>
           </a>
         </li>
       </ul>

@@ -1,6 +1,7 @@
 @extends('layouts/detachedLayoutMaster')
 
 @section('title',  $title ?? "" )
+@section('subtitle',  $subtitle ?? "" )
 @section('vendor-style')
 <!-- Vendor css files -->
 <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/nouislider.min.css')) }}">
