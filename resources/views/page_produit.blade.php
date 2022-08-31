@@ -261,6 +261,7 @@ id="home-page"
       
     </div>
     </div>
+    @if($user ?? false)
       <!-- Leave a Blog Comment -->
       <div class="col-12 mt-1">
         <h6 class="section-label mt-25">Ajouter un avis</h6>
@@ -338,7 +339,9 @@ id="home-page"
           </div>
         </div>
       </div>
+     @else 
       <a href="{{ route("auth.redirect",["slug"=>$product->slug]) }}" class="btn btn-primary">Se connecter avec LinkedIn</a>
+      @endif
       <!--/ Leave a Blog Comment -->
     </div>
     

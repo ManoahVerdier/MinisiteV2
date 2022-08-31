@@ -212,7 +212,8 @@ class SiteController extends Controller
             }
         }
 
-        return view('page_produit', compact('product','compared'));
+        $user = session("user");
+        return view('page_produit', compact('product','compared','user'));
     }
 
     /**
