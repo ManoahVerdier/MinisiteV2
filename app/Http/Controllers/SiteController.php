@@ -334,9 +334,9 @@ class SiteController extends Controller
         return Socialite::driver('linkedin')->redirect();
     }
 
-    public function callback(){
+    public function callback(Request $request){
         //$user = Socialite::driver('linkedin')->user();
-        //dd($user);
+        dd($request);
     }
 
     public function addComparison($id){
