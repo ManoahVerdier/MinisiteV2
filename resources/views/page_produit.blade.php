@@ -272,7 +272,7 @@ id="home-page"
               <div class="row">
                 <div class="col-md-6 col-12">
                   <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Nom" name="name" />
+                    <input type="text" class="form-control" placeholder="Nom" name="name" value="{{ $user->lastName }}"/>
                   </div>
                   <textarea class="form-control mb-2" rows="6" placeholder="Commentaire" name="comment"></textarea>
                 </div>
