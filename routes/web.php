@@ -81,7 +81,7 @@ Route::group(
 
 
 Route::get('/auth/redirect/{slug}', 'SiteController@redirect')->name("auth.redirect");
- 
+Route::get('/auth/redirect', 'SiteController@redirect')->name("auth.redirect");
 Route::get('/auth/callback','SiteController@callback');
 
 Route::get('/addComparison/{id}','SiteController@addComparison')->name("addComparison");
