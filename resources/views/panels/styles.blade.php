@@ -10,7 +10,7 @@
 <!-- END: Vendor CSS-->
 
 <!-- BEGIN: Theme CSS-->
-<link rel="stylesheet" href="{{ asset(mix('css/core.css')) }}" />
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ asset(mix('css/core.css')) }}" />
 <link rel="stylesheet" href="{{ asset(mix('css/base/themes/dark-layout.css')) }}" />
 
 
