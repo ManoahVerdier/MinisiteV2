@@ -37747,39 +37747,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/scss/base/pages/app-calendar.scss":
-/*!*****************************************************!*\
-  !*** ./resources/scss/base/pages/app-calendar.scss ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/app-chat-list.scss":
-/*!******************************************************!*\
-  !*** ./resources/scss/base/pages/app-chat-list.scss ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/app-chat.scss":
-/*!*************************************************!*\
-  !*** ./resources/scss/base/pages/app-chat.scss ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/scss/base/pages/app-ecommerce-details.scss":
 /*!**************************************************************!*\
   !*** ./resources/scss/base/pages/app-ecommerce-details.scss ***!
@@ -37802,109 +37769,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/scss/base/pages/app-email.scss":
-/*!**************************************************!*\
-  !*** ./resources/scss/base/pages/app-email.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/app-file-manager.scss":
-/*!*********************************************************!*\
-  !*** ./resources/scss/base/pages/app-file-manager.scss ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/app-invoice-list.scss":
-/*!*********************************************************!*\
-  !*** ./resources/scss/base/pages/app-invoice-list.scss ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/app-invoice-print.scss":
-/*!**********************************************************!*\
-  !*** ./resources/scss/base/pages/app-invoice-print.scss ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/app-invoice.scss":
-/*!****************************************************!*\
-  !*** ./resources/scss/base/pages/app-invoice.scss ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/app-kanban.scss":
-/*!***************************************************!*\
-  !*** ./resources/scss/base/pages/app-kanban.scss ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/app-todo.scss":
-/*!*************************************************!*\
-  !*** ./resources/scss/base/pages/app-todo.scss ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/authentication.scss":
-/*!*******************************************************!*\
-  !*** ./resources/scss/base/pages/authentication.scss ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/scss/base/pages/dashboard-ecommerce.scss":
 /*!************************************************************!*\
   !*** ./resources/scss/base/pages/dashboard-ecommerce.scss ***!
   \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/modal-create-app.scss":
-/*!*********************************************************!*\
-  !*** ./resources/scss/base/pages/modal-create-app.scss ***!
-  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -37923,64 +37791,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/scss/base/pages/page-coming-soon.scss":
-/*!*********************************************************!*\
-  !*** ./resources/scss/base/pages/page-coming-soon.scss ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/page-faq.scss":
-/*!*************************************************!*\
-  !*** ./resources/scss/base/pages/page-faq.scss ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/page-knowledge-base.scss":
-/*!************************************************************!*\
-  !*** ./resources/scss/base/pages/page-knowledge-base.scss ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/page-misc.scss":
-/*!**************************************************!*\
-  !*** ./resources/scss/base/pages/page-misc.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/scss/base/pages/page-pricing.scss":
 /*!*****************************************************!*\
   !*** ./resources/scss/base/pages/page-pricing.scss ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/pages/page-profile.scss":
-/*!*****************************************************!*\
-  !*** ./resources/scss/base/pages/page-profile.scss ***!
   \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -38022,39 +37835,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/scss/base/plugins/extensions/ext-component-context-menu.scss":
-/*!********************************************************************************!*\
-  !*** ./resources/scss/base/plugins/extensions/ext-component-context-menu.scss ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/extensions/ext-component-drag-drop.scss":
-/*!*****************************************************************************!*\
-  !*** ./resources/scss/base/plugins/extensions/ext-component-drag-drop.scss ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/extensions/ext-component-media-player.scss":
-/*!********************************************************************************!*\
-  !*** ./resources/scss/base/plugins/extensions/ext-component-media-player.scss ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/scss/base/plugins/extensions/ext-component-ratings.scss":
 /*!***************************************************************************!*\
   !*** ./resources/scss/base/plugins/extensions/ext-component-ratings.scss ***!
@@ -38077,28 +37857,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/scss/base/plugins/extensions/ext-component-sweet-alerts.scss":
-/*!********************************************************************************!*\
-  !*** ./resources/scss/base/plugins/extensions/ext-component-sweet-alerts.scss ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/extensions/ext-component-swiper.scss":
-/*!**************************************************************************!*\
-  !*** ./resources/scss/base/plugins/extensions/ext-component-swiper.scss ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/scss/base/plugins/extensions/ext-component-toastr.scss":
 /*!**************************************************************************!*\
   !*** ./resources/scss/base/plugins/extensions/ext-component-toastr.scss ***!
@@ -38110,109 +37868,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/scss/base/plugins/extensions/ext-component-tour.scss":
-/*!************************************************************************!*\
-  !*** ./resources/scss/base/plugins/extensions/ext-component-tour.scss ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/extensions/ext-component-tree.scss":
-/*!************************************************************************!*\
-  !*** ./resources/scss/base/plugins/extensions/ext-component-tree.scss ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/forms/form-file-uploader.scss":
-/*!*******************************************************************!*\
-  !*** ./resources/scss/base/plugins/forms/form-file-uploader.scss ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/scss/base/plugins/forms/form-number-input.scss":
 /*!******************************************************************!*\
   !*** ./resources/scss/base/plugins/forms/form-number-input.scss ***!
   \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/forms/form-quill-editor.scss":
-/*!******************************************************************!*\
-  !*** ./resources/scss/base/plugins/forms/form-quill-editor.scss ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/forms/form-validation.scss":
-/*!****************************************************************!*\
-  !*** ./resources/scss/base/plugins/forms/form-validation.scss ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/forms/form-wizard.scss":
-/*!************************************************************!*\
-  !*** ./resources/scss/base/plugins/forms/form-wizard.scss ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/forms/pickers/form-flat-pickr.scss":
-/*!************************************************************************!*\
-  !*** ./resources/scss/base/plugins/forms/pickers/form-flat-pickr.scss ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/forms/pickers/form-pickadate.scss":
-/*!***********************************************************************!*\
-  !*** ./resources/scss/base/plugins/forms/pickers/form-pickadate.scss ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/scss/base/plugins/maps/map-leaflet.scss":
-/*!***********************************************************!*\
-  !*** ./resources/scss/base/plugins/maps/map-leaflet.scss ***!
-  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -38287,55 +37946,24 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/scss/base/plugins/charts/chart-apex.scss ./resources/scss/base/plugins/extensions/ext-component-context-menu.scss ./resources/scss/base/plugins/extensions/ext-component-drag-drop.scss ./resources/scss/base/plugins/extensions/ext-component-media-player.scss ./resources/scss/base/plugins/extensions/ext-component-ratings.scss ./resources/scss/base/plugins/extensions/ext-component-sliders.scss ./resources/scss/base/plugins/extensions/ext-component-sweet-alerts.scss ./resources/scss/base/plugins/extensions/ext-component-swiper.scss ./resources/scss/base/plugins/extensions/ext-component-toastr.scss ./resources/scss/base/plugins/extensions/ext-component-tour.scss ./resources/scss/base/plugins/extensions/ext-component-tree.scss ./resources/scss/base/plugins/forms/form-file-uploader.scss ./resources/scss/base/plugins/forms/form-number-input.scss ./resources/scss/base/plugins/forms/form-quill-editor.scss ./resources/scss/base/plugins/forms/form-validation.scss ./resources/scss/base/plugins/forms/form-wizard.scss ./resources/scss/base/plugins/forms/pickers/form-flat-pickr.scss ./resources/scss/base/plugins/forms/pickers/form-pickadate.scss ./resources/scss/base/plugins/maps/map-leaflet.scss ./resources/scss/base/plugins/ui/coming-soon.scss ./resources/scss/base/pages/app-calendar.scss ./resources/scss/base/pages/app-chat-list.scss ./resources/scss/base/pages/app-chat.scss ./resources/scss/base/pages/app-ecommerce-details.scss ./resources/scss/base/pages/app-ecommerce.scss ./resources/scss/base/pages/app-email.scss ./resources/scss/base/pages/app-file-manager.scss ./resources/scss/base/pages/app-invoice-list.scss ./resources/scss/base/pages/app-invoice-print.scss ./resources/scss/base/pages/app-invoice.scss ./resources/scss/base/pages/app-kanban.scss ./resources/scss/base/pages/app-todo.scss ./resources/scss/base/pages/authentication.scss ./resources/scss/base/pages/dashboard-ecommerce.scss ./resources/scss/base/pages/modal-create-app.scss ./resources/scss/base/pages/page-blog.scss ./resources/scss/base/pages/page-coming-soon.scss ./resources/scss/base/pages/page-faq.scss ./resources/scss/base/pages/page-knowledge-base.scss ./resources/scss/base/pages/page-misc.scss ./resources/scss/base/pages/page-pricing.scss ./resources/scss/base/pages/page-profile.scss ./resources/scss/base/pages/productList.scss ./resources/scss/base/pages/ui-feather.scss ./resources/scss/base/core/colors/palette-gradient.scss ./resources/scss/base/core/colors/palette-noui.scss ./resources/scss/base/core/colors/palette-variables.scss ./resources/scss/base/core/menu/menu-types/horizontal-menu.scss ./resources/scss/base/core/menu/menu-types/vertical-menu.scss ./resources/scss/base/core/menu/menu-types/vertical-overlay-menu.scss ./resources/scss/base/core/mixins/alert.scss ./resources/scss/base/core/mixins/hex2rgb.scss ./resources/scss/base/core/mixins/main-menu-mixin.scss ./resources/scss/base/core/mixins/transitions.scss ./resources/sass/app.scss ./resources/scss/base/themes/dark-layout.scss ./resources/scss/base/themes/bordered-layout.scss ./resources/scss/base/themes/semi-dark-layout.scss ./resources/scss/core.scss ./resources/scss/overrides.scss ./resources/scss/base/custom-rtl.scss ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/scss/base/plugins/charts/chart-apex.scss ./resources/scss/base/plugins/extensions/ext-component-ratings.scss ./resources/scss/base/plugins/extensions/ext-component-sliders.scss ./resources/scss/base/plugins/extensions/ext-component-toastr.scss ./resources/scss/base/plugins/forms/form-number-input.scss ./resources/scss/base/plugins/ui/coming-soon.scss ./resources/scss/base/pages/app-ecommerce-details.scss ./resources/scss/base/pages/app-ecommerce.scss ./resources/scss/base/pages/dashboard-ecommerce.scss ./resources/scss/base/pages/page-blog.scss ./resources/scss/base/pages/page-pricing.scss ./resources/scss/base/pages/productList.scss ./resources/scss/base/pages/ui-feather.scss ./resources/scss/base/core/colors/palette-gradient.scss ./resources/scss/base/core/colors/palette-noui.scss ./resources/scss/base/core/colors/palette-variables.scss ./resources/scss/base/core/menu/menu-types/horizontal-menu.scss ./resources/scss/base/core/menu/menu-types/vertical-menu.scss ./resources/scss/base/core/menu/menu-types/vertical-overlay-menu.scss ./resources/scss/base/core/mixins/alert.scss ./resources/scss/base/core/mixins/hex2rgb.scss ./resources/scss/base/core/mixins/main-menu-mixin.scss ./resources/scss/base/core/mixins/transitions.scss ./resources/sass/app.scss ./resources/scss/base/themes/dark-layout.scss ./resources/scss/base/themes/bordered-layout.scss ./resources/scss/base/themes/semi-dark-layout.scss ./resources/scss/core.scss ./resources/scss/overrides.scss ./resources/scss/base/custom-rtl.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\charts\chart-apex.scss */"./resources/scss/base/plugins/charts/chart-apex.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-context-menu.scss */"./resources/scss/base/plugins/extensions/ext-component-context-menu.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-drag-drop.scss */"./resources/scss/base/plugins/extensions/ext-component-drag-drop.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-media-player.scss */"./resources/scss/base/plugins/extensions/ext-component-media-player.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-ratings.scss */"./resources/scss/base/plugins/extensions/ext-component-ratings.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-sliders.scss */"./resources/scss/base/plugins/extensions/ext-component-sliders.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-sweet-alerts.scss */"./resources/scss/base/plugins/extensions/ext-component-sweet-alerts.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-swiper.scss */"./resources/scss/base/plugins/extensions/ext-component-swiper.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-toastr.scss */"./resources/scss/base/plugins/extensions/ext-component-toastr.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-tour.scss */"./resources/scss/base/plugins/extensions/ext-component-tour.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\extensions\ext-component-tree.scss */"./resources/scss/base/plugins/extensions/ext-component-tree.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\forms\form-file-uploader.scss */"./resources/scss/base/plugins/forms/form-file-uploader.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\forms\form-number-input.scss */"./resources/scss/base/plugins/forms/form-number-input.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\forms\form-quill-editor.scss */"./resources/scss/base/plugins/forms/form-quill-editor.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\forms\form-validation.scss */"./resources/scss/base/plugins/forms/form-validation.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\forms\form-wizard.scss */"./resources/scss/base/plugins/forms/form-wizard.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\forms\pickers\form-flat-pickr.scss */"./resources/scss/base/plugins/forms/pickers/form-flat-pickr.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\forms\pickers\form-pickadate.scss */"./resources/scss/base/plugins/forms/pickers/form-pickadate.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\maps\map-leaflet.scss */"./resources/scss/base/plugins/maps/map-leaflet.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\plugins\ui\coming-soon.scss */"./resources/scss/base/plugins/ui/coming-soon.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-calendar.scss */"./resources/scss/base/pages/app-calendar.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-chat-list.scss */"./resources/scss/base/pages/app-chat-list.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-chat.scss */"./resources/scss/base/pages/app-chat.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-ecommerce-details.scss */"./resources/scss/base/pages/app-ecommerce-details.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-ecommerce.scss */"./resources/scss/base/pages/app-ecommerce.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-email.scss */"./resources/scss/base/pages/app-email.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-file-manager.scss */"./resources/scss/base/pages/app-file-manager.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-invoice-list.scss */"./resources/scss/base/pages/app-invoice-list.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-invoice-print.scss */"./resources/scss/base/pages/app-invoice-print.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-invoice.scss */"./resources/scss/base/pages/app-invoice.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-kanban.scss */"./resources/scss/base/pages/app-kanban.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\app-todo.scss */"./resources/scss/base/pages/app-todo.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\authentication.scss */"./resources/scss/base/pages/authentication.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\dashboard-ecommerce.scss */"./resources/scss/base/pages/dashboard-ecommerce.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\modal-create-app.scss */"./resources/scss/base/pages/modal-create-app.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\page-blog.scss */"./resources/scss/base/pages/page-blog.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\page-coming-soon.scss */"./resources/scss/base/pages/page-coming-soon.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\page-faq.scss */"./resources/scss/base/pages/page-faq.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\page-knowledge-base.scss */"./resources/scss/base/pages/page-knowledge-base.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\page-misc.scss */"./resources/scss/base/pages/page-misc.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\page-pricing.scss */"./resources/scss/base/pages/page-pricing.scss");
-__webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\page-profile.scss */"./resources/scss/base/pages/page-profile.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\productList.scss */"./resources/scss/base/pages/productList.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\pages\ui-feather.scss */"./resources/scss/base/pages/ui-feather.scss");
 __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\scss\base\core\colors\palette-gradient.scss */"./resources/scss/base/core/colors/palette-gradient.scss");
