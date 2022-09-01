@@ -37,7 +37,7 @@
                 <div class="text-muted mb-0">
                     <ul class="unstyled-list list-inline mb-0">
                         @for($i=1;$i<=5;$i++)
-                            @if($i<=$p->reviews->avg("global_rate"))
+                            @if($i<=$p->rating)
                                 <li class="ratings-list-item"><i data-feather="star" height="14px" width="14px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
                             @else 
                                 <li class="ratings-list-item"><i data-feather="star" height="14px" width="14px" class="h-auto w-auto unfilled-star"></i></li>
