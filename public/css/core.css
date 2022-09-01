@@ -20756,6 +20756,202 @@ footer.footer-border {
   }
 }
 
+.avatar {
+  white-space: nowrap;
+  background-color: #c3c3c3;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  display: inline-flex;
+  font-size: 1rem;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+.avatar .avatar-content {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 0.857rem;
+}
+
+.avatar .avatar-content .avatar-icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+.avatar [class*=avatar-status-] {
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #fff;
+}
+
+.avatar [class*=avatar-status-].avatar-status-lg,
+.avatar [class*=avatar-status-].avatar-status-xl {
+  width: 17px;
+  height: 17px;
+  border-width: 2px;
+}
+
+.avatar .avatar-status-online {
+  background-color: #28c76f;
+}
+
+.avatar .avatar-status-busy {
+  background-color: #ea5455;
+}
+
+.avatar .avatar-status-away {
+  background-color: #ff9f43;
+}
+
+.avatar .avatar-status-offline {
+  background-color: #82868b;
+}
+
+.avatar.avatar-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  width: 42px;
+  border-radius: 0.357rem;
+}
+
+.avatar img {
+  border-radius: 50%;
+}
+
+.avatar.avatar-xl {
+  font-size: 1.5rem;
+}
+
+.avatar.avatar-xl img {
+  width: 70px;
+  height: 70px;
+}
+
+.avatar.avatar-xl .avatar-content {
+  height: 70px;
+  width: 70px;
+  font-size: 2.57rem;
+}
+
+.avatar.avatar-xl .avatar-content .avatar-icon,
+.avatar.avatar-xl .avatar-content i,
+.avatar.avatar-xl .avatar-content svg {
+  height: 3rem;
+  width: 3rem;
+  font-size: 3rem;
+}
+
+.avatar.avatar-xl [class*=avatar-status-] {
+  right: 3px;
+  bottom: 0;
+}
+
+.avatar.avatar-lg {
+  font-size: 1.2rem;
+}
+
+.avatar.avatar-lg img {
+  width: 50px;
+  height: 50px;
+}
+
+.avatar.avatar-lg .avatar-content {
+  width: 50px;
+  height: 50px;
+  font-size: 1.714rem;
+}
+
+.avatar.avatar-lg .avatar-content .avatar-icon,
+.avatar.avatar-lg .avatar-content i,
+.avatar.avatar-lg .avatar-content svg {
+  height: 2rem;
+  width: 2rem;
+  font-size: 2rem;
+}
+
+.avatar.avatar-lg [class*=avatar-status-] {
+  right: 3px;
+  bottom: 1px;
+}
+
+.avatar.avatar-sm .avatar-content {
+  width: 24px;
+  height: 24px;
+}
+
+.avatar.avatar-sm .avatar-content .avatar-icon,
+.avatar.avatar-sm .avatar-content i,
+.avatar.avatar-sm .avatar-content svg {
+  height: 1rem;
+  width: 1rem;
+  font-size: 1rem;
+}
+
+.avatar.avatar-sm img {
+  width: 24px;
+  height: 24px;
+}
+
+.avatar.avatar-sm [class*=avatar-status-] {
+  right: -3px;
+  bottom: -2px;
+}
+
+.avatar-group {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.avatar-group .avatar {
+  transition: all 0.25s ease;
+}
+
+.avatar-group .avatar img,
+.avatar-group .avatar .avatar-content {
+  box-shadow: 0 0 0 2px #fff, inset 0 0 0 1px rgba(34, 41, 47, 0.07);
+}
+
+.avatar-group .avatar .avatar-content {
+  background-color: tint-color(#82868b, 20%) !important;
+}
+
+.avatar-group .avatar:hover {
+  transition: all 0.25s ease;
+}
+
+.avatar-group .avatar.pull-up:hover {
+  transform: translateY(-4px) scale(1.07);
+}
+
+.avatar-group .avatar:not(:first-child) {
+  margin-left: -0.55rem;
+}
+
+.avatar-group .avatar-sm:not(:first-child) {
+  margin-left: -0.4rem;
+}
+
+.avatar-group .avatar-lg:not(:first-child) {
+  margin-left: -1rem;
+}
+
+.avatar-group .avatar-xl:not(:first-child) {
+  margin-left: -1.5rem;
+}
+
 /*=========================================================================================
 	File Name: search.scss
 	Description: Search  functionality.
