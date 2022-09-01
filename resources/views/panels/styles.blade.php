@@ -1,10 +1,11 @@
-<!-- BEGIN: Vendor CSS-->
-@if ($configData['direction'] === 'rtl' && isset($configData['direction']))
-  <link rel="stylesheet" href="{{ asset(mix('vendors/css/vendors-rtl.min.css')) }}" />
-@else
-  <link rel="stylesheet" href="{{ asset(mix('vendors/css/vendors.min.css')) }}" />
-@endif
-
+@if(!@isset($hp))
+  <!-- BEGIN: Vendor CSS-->
+  @if ($configData['direction'] === 'rtl' && isset($configData['direction']))
+    <link rel="stylesheet" href="{{ asset(mix('vendors/css/vendors-rtl.min.css')) }}" />
+  @else
+    <link rel="stylesheet" href="{{ asset(mix('vendors/css/vendors.min.css')) }}" />
+  @endif
+@endisset
 @yield('vendor-style')
 <!-- END: Vendor CSS-->
 
@@ -30,11 +31,3 @@
 <link rel="stylesheet" href="{{ asset(mix('css/overrides.css')) }}" />
 
 <!-- BEGIN: Custom CSS-->
-
-@if ($configData['direction'] === 'rtl' && isset($configData['direction']))
-  <link rel="stylesheet" href="{{ asset(mix('css-rtl/custom-rtl.css')) }}" />
-  <link rel="stylesheet" href="{{ asset(mix('css-rtl/style-rtl.css')) }}" />
-
-@else
-  {{-- user custom styles --}}
-@endif

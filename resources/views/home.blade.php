@@ -7,9 +7,6 @@
 id="home-page"
 @endsection
 
-
-
-{{-- UPDATE --}}
 @section('page-style')
 {{-- Page Css files --}}
 <link rel="stylesheet" type="text/css" href="{{ asset('css/base/pages/page-blog.css') }}" />
