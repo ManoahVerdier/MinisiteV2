@@ -38,8 +38,8 @@ class DatabaseSeeder extends Seeder
         
         $this->call(CategoriesTableSeeder::class);
         $this->call(ReviewsTableSeeder::class);
-        $this->call(ContactTableSeeder::class);
-        $this->call(MigrationsTableSeeder::class);
-        $this->call(SessionsTableSeeder::class);
+        //$this->call(ContactTableSeeder::class);
+        //$this->call(MigrationsTableSeeder::class);
+        //$this->call(SessionsTableSeeder::class);
     }
 }
