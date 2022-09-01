@@ -26,6 +26,7 @@ id="home-page"
             <div class="card">
                 <img
                 src="{{ URL::asset("storage/".$p->image) }}"
+                srcset="{{ URL::asset("storage/".$p->image) }} 2400w, {{ URL::asset("storage/".str_replace(".jpg","-medium.jpg",$p->image)) }} 1200w, {{ URL::asset("storage/".str_replace(".jpg","-small.jpg",$p->image)) }} 600w"
                 class="img-fluid card-img-top"
                 alt="Blog Detail Pic"
                 />
