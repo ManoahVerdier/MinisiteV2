@@ -214,7 +214,7 @@ class SiteController extends Controller
 
         $user = session("user");
        // $title = $product->title;
-        return view('page_produit', compact('product','compared','user'));
+        return view('product', compact('product','compared','user'));
     }
 
     /**
