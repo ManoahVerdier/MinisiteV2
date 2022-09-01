@@ -17,20 +17,17 @@ class DatabaseSeeder extends Seeder
         $this->call(DataTypesTableSeeder::class);
         $this->call(DataRowsTableSeeder::class);
         
-        
-        
         $this->call(PagesTableSeeder::class);
-//        $this->call(RolesTableSeeder::class);
-//        $this->call(PermissionsTableSeeder::class);
-//        $this->call(PermissionRoleTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
+        $this->call(PermissionsTableSeeder::class);
+        $this->call(PermissionRoleTableSeeder::class);
         
         
         $this->call(SettingsTableSeeder::class);
-        //$this->call(TranslationsTableSeeder::class);
+        $this->call(TranslationsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
 
         $this->call(HomepagesTableSeeder::class);
-        $this->call(PageProduitsTableSeeder::class);
         $this->call(FaqsTableSeeder::class);
         $this->call(UserRolesTableSeeder::class);
         $this->call(AttributesTableSeeder::class);
@@ -38,8 +35,5 @@ class DatabaseSeeder extends Seeder
         
         $this->call(CategoriesTableSeeder::class);
         $this->call(ReviewsTableSeeder::class);
-        //$this->call(ContactTableSeeder::class);
-        //$this->call(MigrationsTableSeeder::class);
-        //$this->call(SessionsTableSeeder::class);
     }
 }
