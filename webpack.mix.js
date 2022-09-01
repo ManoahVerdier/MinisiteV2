@@ -66,7 +66,7 @@ const path = require('path')
  mixAssetsDir('fonts', (src, dest) => mix.copy(src, dest))
  mixAssetsDir('fonts/**/**/*.css', (src, dest) => mix.copy(src, dest))
  mix.copyDirectory('resources/images', 'public/images')
- mix.copyDirectory('resources/data', 'public/data')
+ 
 
 mix.js('resources/js/app.js', 'public/js')
   .js('resources/js/productList.js', 'public/js')
@@ -75,15 +75,12 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css', { prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';' })
     .js('resources/js/core/app-menu.js', 'public/js/core')
     .js('resources/js/core/app.js', 'public/js/core')
-    .js('resources/assets/js/scripts.js', 'public/js/core')
     .sass('resources/scss/base/themes/dark-layout.scss', 'public/css/base/themes', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
     .sass('resources/scss/base/themes/bordered-layout.scss', 'public/css/base/themes', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
     .sass('resources/scss/base/themes/semi-dark-layout.scss', 'public/css/base/themes', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
     .sass('resources/scss/core.scss', 'public/css', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
     .sass('resources/scss/overrides.scss', 'public/css', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
     .sass('resources/scss/base/custom-rtl.scss', 'public/css-rtl', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
-    .sass('resources/assets/scss/style-rtl.scss', 'public/css-rtl', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
-    .sass('resources/assets/scss/style.scss', 'public/css', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
     .version();
 
 mix.then(() => {

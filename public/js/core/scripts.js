@@ -86,24 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/scripts.js":
-/*!****************************************!*\
-  !*** ./resources/assets/js/scripts.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function (window, undefined) {
-  'use strict';
-  /*
-  NOTE:
-  ------
-  PLACE HERE YOUR OWN JAVASCRIPT CODE IF NEEDED
-  WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR JAVASCRIPT CODE PLEASE CONSIDER WRITING YOUR SCRIPT HERE.  */
-})(window);
-
-/***/ }),
-
 /***/ 5:
 /*!**********************************************!*\
   !*** multi ./resources/assets/js/scripts.js ***!
@@ -111,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\verdi\Projets\minisite\resources\assets\js\scripts.js */"./resources/assets/js/scripts.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\Users\\verdi\\Projets\\minisite\\resources\\assets\\js\\scripts.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })

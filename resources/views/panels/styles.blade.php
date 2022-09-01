@@ -37,5 +37,4 @@
 
 @else
   {{-- user custom styles --}}
-  <link rel="stylesheet" href="{{ asset(mix('css/style.css')) }}" />
 @endif
