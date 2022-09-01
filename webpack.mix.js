@@ -76,8 +76,8 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/core/app-menu.js', 'public/js/core')
     .js('resources/js/core/app.js', 'public/js/core')
     .sass('resources/scss/base/themes/dark-layout.scss', 'public/css/base/themes', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
-    .sass('resources/scss/base/themes/bordered-layout.scss', 'public/css/base/themes', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
-    .sass('resources/scss/base/themes/semi-dark-layout.scss', 'public/css/base/themes', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
+    
+    
     .sass('resources/scss/core.scss', 'public/css', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
     .sass('resources/scss/overrides.scss', 'public/css', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
     .sass('resources/scss/base/custom-rtl.scss', 'public/css-rtl', { sassOptions,prependData: '$customColor:' + process.env.PRIMARY_COLOR + ';'  })
