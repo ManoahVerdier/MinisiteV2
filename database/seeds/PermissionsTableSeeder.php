@@ -625,6 +625,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2022-08-12 14:38:45',
                 'updated_at' => '2022-08-12 14:38:45',
             ),
+            76 => 
+            array (
+                'id' => 77,
+                'key' => 'browse_homepages',
+                'table_name' => 'homepages',
+                'created_at' => '2022-08-31 15:53:09',
+                'updated_at' => '2022-08-31 15:53:09',
+            ),
+            77 => 
+            array (
+                'id' => 78,
+                'key' => 'read_homepages',
+                'table_name' => 'homepages',
+                'created_at' => '2022-08-31 15:53:09',
+                'updated_at' => '2022-08-31 15:53:09',
+            ),
+            78 => 
+            array (
+                'id' => 79,
+                'key' => 'edit_homepages',
+                'table_name' => 'homepages',
+                'created_at' => '2022-08-31 15:53:09',
+                'updated_at' => '2022-08-31 15:53:09',
+            ),
+            79 => 
+            array (
+                'id' => 80,
+                'key' => 'add_homepages',
+                'table_name' => 'homepages',
+                'created_at' => '2022-08-31 15:53:09',
+                'updated_at' => '2022-08-31 15:53:09',
+            ),
+            80 => 
+            array (
+                'id' => 81,
+                'key' => 'delete_homepages',
+                'table_name' => 'homepages',
+                'created_at' => '2022-08-31 15:53:09',
+                'updated_at' => '2022-08-31 15:53:09',
+            ),
         ));
         
         

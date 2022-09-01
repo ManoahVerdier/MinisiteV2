@@ -33,7 +33,7 @@ class HomepagesTableSeeder extends Seeder
                 'logo' => 'homepages/June2022/8MUq8Aih1pFuZYaNUPyB.png',
                 'footer' => 'Texte du footer, modifiable depuis le back office, de longueur variable et affiché de manière responsive.',
                 'created_at' => '2022-06-14 14:13:00',
-                'updated_at' => '2022-06-23 07:31:54',
+                'updated_at' => '2022-08-31 15:54:24',
                 'metatitle' => 'Titre meta',
                 'metadesc' => 'Description meta HP',
                 'intro' => '<p style="box-sizing: border-box; font-family: Muli, sans-serif; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-size: 14.4px; background-color: #f8fafc;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus pretium risus sed scelerisque. Ut quis vulputate augue. Etiam sapien magna, lobortis vel venenatis hendrerit, rutrum ac lectus. Sed consectetur orci ligula, a luctus augue venenatis in. Quisque in felis nec neque congue tempor quis non nisl. Proin nec blandit mi, eu ultrices neque. Fusce elementum accumsan dolor, ut mollis tellus maximus eget. Phasellus vel aliquam lectus. Suspendisse a lorem leo. Donec rutrum, turpis et lobortis luctus, dolor metus faucibus erat, ut lobortis massa ex fringilla justo. Etiam vitae justo leo. Vestibulum aliquam hendrerit neque eget bibendum. Aenean pellentesque nulla nec massa cursus tristique. Mauris vestibulum convallis arcu vel malesuada. Duis dapibus efficitur ullamcorper.</p>
@@ -41,6 +41,8 @@ class HomepagesTableSeeder extends Seeder
 <p style="box-sizing: border-box; font-family: Muli, sans-serif; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-size: 14.4px; background-color: #f8fafc;">Integer gravida vitae ipsum at tristique. Donec at cursus enim. Suspendisse accumsan in metus vel efficitur. Morbi placerat ut magna sit amet dictum. Sed vel lacus dictum, porta tellus nec, ullamcorper nisl. Sed facilisis cursus eros laoreet convallis. Duis eget ipsum accumsan, faucibus felis sit amet, eleifend justo. Praesent sed dictum orci. Quisque vel odio leo.</p>
 <p style="box-sizing: border-box; font-family: Muli, sans-serif; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-size: 14.4px; background-color: #f8fafc;">Duis est magna, lobortis ut ultricies consectetur, vulputate sed sapien. Nunc dolor dolor, facilisis id vulputate vel, tempus vel dolor. In pharetra dui massa, vel laoreet eros placerat vitae. In elementum nisi nec pharetra efficitur. Fusce molestie sapien vitae porta consectetur. Suspendisse mauris nisi, molestie consequat dolor sit amet, auctor posuere risus. Aliquam dapibus lectus ex, quis tempor magna tincidunt ac. Curabitur cursus elit quis quam sollicitudin condimentum.</p>
 <p style="box-sizing: border-box; font-family: Muli, sans-serif; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-size: 14.4px; background-color: #f8fafc;">Cras vitae massa id dui vestibulum sodales. Mauris sollicitudin interdum ornare. In risus elit, vulputate pellentesque ullamcorper quis, rhoncus a ipsum. Praesent a consequat nunc. Donec dapibus enim in dui suscipit pharetra. Donec nec augue maximus arcu dapibus rutrum eu id tortor. Quisque semper, metus euismod sodales mollis, felis turpis sollicitudin magna, vitae dictum dolor lacus lobortis nunc. Suspendisse varius a lectus non consectetur.</p>',
+                'products_title' => 'Tous les produits',
+                'products_subtitle' => 'Les systèmes d\'exploitations, filtrables et disponibles',
             ),
         ));
         
