@@ -1,7 +1,7 @@
 @extends('layouts/detachedLayoutMaster')
 
 @section('title', App\Homepage::first()->metatitle  )
-@section('description', App\Homepage::first()->metadesc)
+@section('metadesc', App\Homepage::first()->metadesc)
 
 @section('body-attr')
 id="home-page"
@@ -89,12 +89,12 @@ id="home-page"
                     </div>
                     <div>
                         <a href="{{ $p->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0">
-                          <i data-feather="shopping-cart" class="mr-50"></i>
-                          <span class="add-to-cart">Acheter</span>
+                          <span class="add-to-cart">Voir le site</span>
+                          <i data-feather="chevron-right" class="ml-50"></i>
                         </a>
                         <a href="{{route("produit",$p->slug)}}" class="btn btn-outline-secondary btn-wishlist mr-0 mr-sm-1 mb-1 mb-sm-0">
-                          <i data-feather="eye" class="mr-50"></i>
-                          <span>Voir la fiche</span>
+                          <i data-feather="book-open" class="mr-50"></i>
+                          <span>Lire l'article</span>
                         </a>
                     </div>
                     

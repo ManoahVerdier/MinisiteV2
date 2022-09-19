@@ -47,11 +47,15 @@
     
     
   </ul>
-  <span class="d-md-none brand-logo mx-auto" style="padding-right:70px">
+  <span class="d-md-none brand-logo mx-auto d-flex flex-row align-items-center" style="padding-right:70px">
     @if(App\Homepage::first()->logo??false)
       <img class=" mx-auto" src="{{  asset("storage/".App\Homepage::first()->logo)  }}" style="max-height:50px"/>
     @else 
       <img class=" mx-auto" src="{{asset('img/header/logo.png')}}" style="max-height:50px"/>
+    @endif
+
+    @if(App\Homepage::first()->titre_site??false)
+      <span class="h2 align-self-center mb-0 ml-1">{{ App\Homepage::first()->titre_site }}</span>
     @endif
   </span>
 </div>

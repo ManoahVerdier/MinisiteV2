@@ -1,5 +1,8 @@
 @extends("layouts.productList")
 
+@section('metadesc', "Recherche de produits")
+@section('title', "Recherche de produits")
+
 @section('content')
   
   @livewire('show-products', ['isCateg' => false,'search'=>$search])

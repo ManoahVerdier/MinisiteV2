@@ -2,6 +2,8 @@
 
 @section('title', $product->title)
 
+@section('metadesc', $product->meta_desc)
+
 @section('vendor-style')
   {{-- Vendor Css files --}}
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')) }}">
@@ -43,15 +45,9 @@ id="home-page"
       <div class="card-body">
         <div class="row my-2">
           <div class="col-12 col-md-5 d-flex align-items-center justify-content-center mb-2 mb-md-0">
-            <div class="d-flex align-items-center justify-content-center">
-              <img
-                src="{{ URL::asset("storage/".$product->image) }}"
-                class="img-fluid product-img"
-                alt="{{ $product->title }}"
-              />
-            </div>
+           
           </div>
-          <div class="col-12 col-md-7">
+          <div class="col-12 col-md-7 pb-2">
             <h1 class="h4">{{ $product->title }}</h1>
             <span class="card-text item-company">De <a href="#" class="company-name">{{ $product->brand }}</a></span>
             <div class="ecommerce-details-price d-flex flex-wrap mt-1">
@@ -66,19 +62,44 @@ id="home-page"
                     @endfor
                 </ul>
             </div>
-            
-            <p class="card-text">
-              {!! $product->description !!}
-            </p>
+          </div>
+          <div class="col-12  d-flex align-items-center justify-content-center mb-2 mb-md-0">
+            <div class="d-flex align-items-center justify-content-center">
+              <img
+                src="{{ URL::asset("storage/".$product->image) }}"
+                class="img-fluid product-img"
+                alt="{{ $product->title }}"
+              />
+            </div>
+          </div>
+          <div class="col-12">  
+            <div class="row py-3">
+              <div class="col-sm-12 col-md-1"></div>
+              <div class="col-sm-12 col-md-5">
+                  <div class="bg-primary text-white d-inline-block h-100 w-100 rounded-3 p-4 product_pro_cons" id="product_pros">
+                      <p class="h3 text-center text-white">Points forts</p>
+                      <div class="text-white">{!!$product->pros!!}</div>
+                  </div>
+              </div>
+              
+              <div class="col-sm-12 col-md-5">
+                  <div class=" mt-3 mt-md-0 p-4 h-100  w-100 d-inline-block border border-2 border product_pro_cons" id="product_cons"  >
+                      <p class="h3 text-center">Points faibles</p>
+                      {!!$product->cons!!}
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-1"></div>
+            </div>
             <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="col-sm-12 col-md-1"></div>
+                <div class="col-12 col-md-5">
                     <ul class="product-features list-unstyled">
                         @foreach(\App\Attribute::where("type","<>","radio_btn")->where("type","<>","rich_text_box")->get() as $attribute)
                             <li><i data-feather="award"></i><span>{{ $attribute->displayName }}</span>&nbsp;:&nbsp;<span class="text-primary">{{ $product[lcfirst($attribute->name)] }} @if($attribute->name=="prix") € @endif</span>
                         @endforeach
                     </ul>
                 </div> 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-5">
                     <ul class="product-features list-unstyled">
                         @foreach(\App\Attribute::where("type","radio_btn")->get() as $attribute)
                             @if($product[lcfirst($attribute->name)])
@@ -89,66 +110,80 @@ id="home-page"
                         @endforeach
                     </ul>
                 </div>
-            </div>
-            <hr/>
-            <div class="d-flex flex-column flex-sm-row pt-1">
-                <a href="{{ $product->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0">
-                  <i data-feather="shopping-cart" class="mr-50"></i>
-                  <span class="add-to-cart">Acheter</span>
-                </a>
-                <a href="{{ route("produitsInit") }}" class="btn btn-outline-secondary btn-wishlist mr-0 mr-sm-1 mb-1 mb-sm-0">
-                  <i data-feather="list" class="mr-50"></i>
-                  <span>Retour à la liste</span>
-                </a>
-                <a href="#" class="btn btn-outline-{{ $compared?"primary":"secondary" }} btn-comparison me-0 mr-sm-1 mb-1 mb-sm-0" product-id="{{ $product->id }}">
-                  <i data-feather="award" class="mr-50 {{ $compared?"text-primary":"" }}"></i>
-                  <span>{{ $compared?"Comparé":"Comparer" }}</span>
-                </a>
+                <div class="col-sm-12 col-md-1"></div>
               </div>
+            
             </div>
           </div>
+          
         </div>
-        <!-- Item features starts -->
-        <div class="item-features">
-            <div class="row text-center">
-                @foreach(\App\Attribute::where("type","rich_text_box")->get() as $attribute)
-                    <div class="col-12 mb-4 mb-md-0">
-                        <div class="w-75 mx-auto">
-                        <i data-feather="award"></i>
-                        <h4 class="mt-2 mb-1">{{ $attribute->displayName }}</h4>
-                        <p class="card-text">{{ $product[$attribute->name] }}</p>
-                        </div>
-                    </div>
-                @endforeach 
-                <div class="col-12 mb-4 mb-md-0">
-                    <h2>{{ $product->meta_desc }}</h2>
-                </div>
-            
+        <hr/>
+        <div class='card-body'>
+          <div class="col-12">
+            <div class="d-flex flex-column flex-sm-row ">
+              <a href="{{ $product->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0">
+                <span class="add-to-cart">Voir le site</span>
+                <i data-feather="chevron-right" class="ml-50"></i>
+              </a>
+              <a href="{{ route("produitsInit") }}" class="btn btn-outline-secondary btn-wishlist mr-0 mr-sm-1 mb-1 mb-sm-0">
+                <i data-feather="list" class="mr-50"></i>
+                <span>Retour à la liste</span>
+              </a>
+              <a href="#" class="btn btn-outline-{{ $compared?"primary":"secondary" }} btn-comparison me-0 mr-sm-1 mb-1 mb-sm-0" product-id="{{ $product->id }}">
+                <i data-feather="award" class="mr-50 {{ $compared?"text-primary":"" }}"></i>
+                <span>{{ $compared?"Comparé":"Comparer" }}</span>
+              </a>
             </div>
+          </div> 
         </div>
-        <!-- Item features ends -->
-    
-
-    <div class="card-body my-4">
-        <div class="row">
-            <div class="col-sm-12 col-md-1"></div>
-            <div class="col-sm-12 col-md-5">
-                <div class="bg-primary text-white d-inline-block h-100 w-100 rounded-3 mr-5 p-4 product_pro_cons" id="product_pros">
-                    <p class="h3 text-center text-white">Points forts</p>
-                    <div class="text-white">{!!$product->pros!!}</div>
-                </div>
-            </div>
-            
-            <div class="col-sm-12 col-md-5">
-                <div class=" ml-md-5 mt-3 mt-md-0 p-4 h-100  w-100 d-inline-block border border-2 border product_pro_cons" id="product_cons"  >
-                    <p class="h3 text-center">Points faibles</p>
-                    {!!$product->cons!!}
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-1"></div>
+        @if(\App\Attribute::where("type","rich_text_box")->get()->count()>0)
+          <!-- Item features starts -->
+          <div class="item-features">
+              <div class="row text-center">
+                  @foreach(\App\Attribute::where("type","rich_text_box")->get() as $attribute)
+                      <div class="col-12 mb-4 mb-md-0">
+                          <div class="w-75 mx-auto">
+                          <i data-feather="award"></i>
+                          <h4 class="mt-2 mb-1">{{ $attribute->displayName }}</h4>
+                          <p class="card-text">{{ $product[$attribute->name] }}</p>
+                          </div>
+                      </div>
+                  @endforeach 
+              
+              </div>
+          </div>
+          <!-- Item features ends -->
+        @else
+          <hr/>
+        @endif
+     
+    <div class='card-body'>
+      <div class="col-12">  
+        <p class="card-text">
+          {!! $product->description !!}
+        </p>
+      </div>
+    </div>
+    <hr>
+    <div class='card-body'>
+      <div class="col-12">  
+        <div class="d-flex flex-column flex-sm-row pt-0">
+          <a href="{{ $product->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0">
+            <span class="add-to-cart">Voir le site</span>
+            <i data-feather="chevron-right" class="ml-50"></i>
+          </a>
+          <a href="{{ route("produitsInit") }}" class="btn btn-outline-secondary btn-wishlist mr-0 mr-sm-1 mb-1 mb-sm-0">
+            <i data-feather="list" class="mr-50"></i>
+            <span>Retour à la liste</span>
+          </a>
+          <a href="#" class="btn btn-outline-{{ $compared?"primary":"secondary" }} btn-comparison me-0 mr-sm-1 mb-1 mb-sm-0" product-id="{{ $product->id }}">
+            <i data-feather="award" class="mr-50 {{ $compared?"text-primary":"" }}"></i>
+            <span>{{ $compared?"Comparé":"Comparer" }}</span>
+          </a>
         </div>
-    </div> 
-
+      </div>
+    </div>
+    <hr>
     @if($product->category->products->count()>1)
         <!-- Related Products starts -->
         <div class="card-body">
@@ -180,8 +215,8 @@ id="home-page"
                                 @endfor
                             </ul>
                             <a href="{{ $p->link }}" class="btn btn-primary btn-cart mb-1 mb-sm-0 mt-2">
-                                <i data-feather="shopping-cart" class="mr-50"></i>
-                                <span class="add-to-cart">Acheter</span>
+                                <span class="add-to-cart">voir le site</span>
+                                <i data-feather="chevron-right" class="ml-50"></i>
                               </a>
                             </div>
                         </a>
