@@ -25,7 +25,7 @@ class HomepageController extends VoyagerBaseController
 	
         $process = new Process(['./getNode.sh']);
 	    $process->setTimeout(3600);
-        $process->start();
+        $process->run();
         
         return parent::update($request,$id);
 
