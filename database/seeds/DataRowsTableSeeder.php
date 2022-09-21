@@ -2403,102 +2403,6 @@ class DataRowsTableSeeder extends Seeder
             ),
             149 => 
             array (
-                'id' => 250,
-                'data_type_id' => 19,
-                'field' => 'prix',
-                'type' => 'number',
-                'display_name' => 'Prix',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '[]',
-                'order' => 11,
-            ),
-            150 => 
-            array (
-                'id' => 251,
-                'data_type_id' => 19,
-                'field' => 'francais',
-                'type' => 'radio_btn',
-                'display_name' => 'Français',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"default":"1","options":{"0":"Non","1":"Oui"}}',
-                'order' => 12,
-            ),
-            151 => 
-            array (
-                'id' => 252,
-                'data_type_id' => 19,
-                'field' => 'gratuit',
-                'type' => 'radio_btn',
-                'display_name' => 'Gratuit',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"default":"1","options":{"0":"Non","1":"Oui"}}',
-                'order' => 13,
-            ),
-            152 => 
-            array (
-                'id' => 253,
-                'data_type_id' => 19,
-                'field' => 'essaiGratuit',
-                'type' => 'radio_btn',
-                'display_name' => 'Essai Gratuit',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"default":"1","options":{"0":"Non","1":"Oui"}}',
-                'order' => 14,
-            ),
-            153 => 
-            array (
-                'id' => 254,
-                'data_type_id' => 19,
-                'field' => 'dispoSur',
-                'type' => 'text',
-                'display_name' => 'Dispo sur',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '[]',
-                'order' => 15,
-            ),
-            154 => 
-            array (
-                'id' => 255,
-                'data_type_id' => 19,
-                'field' => 'langue',
-                'type' => 'text',
-                'display_name' => 'Langue',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '[]',
-                'order' => 16,
-            ),
-            155 => 
-            array (
                 'id' => 256,
                 'data_type_id' => 6,
                 'field' => 'parent_id',
@@ -2513,7 +2417,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 2,
             ),
-            156 => 
+            150 => 
             array (
                 'id' => 257,
                 'data_type_id' => 6,
@@ -2529,7 +2433,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 3,
             ),
-            157 => 
+            151 => 
             array (
                 'id' => 258,
                 'data_type_id' => 6,
@@ -2545,7 +2449,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"\\\\App\\\\Category","table":"categories","type":"belongsTo","column":"parent_id","key":"id","label":"name","pivot_table":"attributes","pivot":"0","taggable":"0"}',
                 'order' => 8,
             ),
-            158 => 
+            152 => 
             array (
                 'id' => 259,
                 'data_type_id' => 19,
@@ -2561,7 +2465,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"\\\\App\\\\Category","table":"categories","type":"belongsTo","column":"category_id","key":"id","label":"name","pivot_table":"attributes","pivot":"0","taggable":"0"}',
                 'order' => 17,
             ),
-            159 => 
+            153 => 
             array (
                 'id' => 260,
                 'data_type_id' => 19,
@@ -2577,7 +2481,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 18,
             ),
-            160 => 
+            154 => 
             array (
                 'id' => 261,
                 'data_type_id' => 15,
@@ -2593,7 +2497,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 15,
             ),
-            161 => 
+            155 => 
             array (
                 'id' => 262,
                 'data_type_id' => 15,

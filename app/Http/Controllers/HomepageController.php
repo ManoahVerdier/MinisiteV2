@@ -24,9 +24,11 @@ class HomepageController extends VoyagerBaseController
         $this->setEnv('PRIMARY_COLOR',$request->color);
 	
         $process = new Process(['../getNode.sh']);
-	    $process->setTimeout(3600);
+	$process->setTimeout(3600);
         $process->run();
         
+	dd($process->getOutput(),$process->getErrorOutput());
+
         return parent::update($request,$id);
 
     }
