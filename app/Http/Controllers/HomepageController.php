@@ -22,20 +22,13 @@ class HomepageController extends VoyagerBaseController
 
     public function update(Request $request, $id){
         $this->setEnv('PRIMARY_COLOR',$request->color);
-
-        $process = new Process(['~/getNode.sh']);
-        $process->run();
-
-        $process = new Process(['nvm', 'use', '--delete-prefix', 'v10.24.1']);
-        $process->run();
-
-        $process = new Process(['npm', 'run', 'prod']);
-        $process->run();
-
-        $process = new Process(['~/delNode.sh']);
-        $process->run();
+	
+        $process = new Process(['./getNode.sh']);
+	    $process->setTimeout(3600);
+        $process->start();
         
         return parent::update($request,$id);
+
     }
 
     public function create(Request $request){
