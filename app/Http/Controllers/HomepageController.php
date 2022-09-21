@@ -23,7 +23,7 @@ class HomepageController extends VoyagerBaseController
     public function update(Request $request, $id){
         $this->setEnv('PRIMARY_COLOR',$request->color);
 	
-        $process = new Process(['./getNode.sh']);
+        $process = new Process(['../getNode.sh']);
 	    $process->setTimeout(3600);
         $process->run();
         

@@ -6,3 +6,5 @@ cd public
 rm storage
 ln -s ../storage/app/public/ storage
 cd ..
+chmod +x ./getNode.sh
+./getNode.sh

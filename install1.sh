@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cp ../composer.phar .
-cp ../certificationiso/.env .
-cp -r ../certificationiso/node_modules .
-cp ../certificationiso/.htaccess .
+cp ../minisite/.env .
+cp -r ../minisite/node_modules .
+cp ../minisite/.htaccess .
 vim .env 
