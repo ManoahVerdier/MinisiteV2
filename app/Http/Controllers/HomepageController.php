@@ -28,8 +28,11 @@ class HomepageController extends VoyagerBaseController
 
         $process = new Process(['nvm', 'use', '--delete-prefix', 'v10.24.1']);
         $process->run();
-        
+
         $process = new Process(['npm', 'run', 'prod']);
+        $process->run();
+
+        $process = new Process(['~/delNode.sh']);
         $process->run();
         
         return parent::update($request,$id);
