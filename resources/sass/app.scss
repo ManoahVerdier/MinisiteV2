@@ -78,13 +78,15 @@ body{
     }
 
 }
-    
+
 body{
     overflow-x:hidden;
 }
 
 
-
+.btn-primary.btn-cart.btn-primary:hover:not(.disabled):not(:disabled) {
+    box-shadow: 0 8px 25px -8px #EB8D03;
+}
 
 
 
