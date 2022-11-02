@@ -88,7 +88,7 @@ id="home-page"
                         </ul>
                     </div>
                     <div>
-                        <a href="{{ $p->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0" style="background-color:#EB8D03 !important">
+                        <a href="{{ $p->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0" style="background-color:#EB8D03 !important;border-color:#EB8D03 !important;">
                           <span class="add-to-cart">Voir le prix</span>
                           <i data-feather="chevron-right" class="ml-50"></i>
                         </a>
