@@ -45,7 +45,7 @@ id="home-page"
       <div class="card-body">
         <div class="row my-2">
           <div class="col-12 col-md-5 d-flex align-items-center justify-content-center mb-2 mb-md-0">
-           
+
           </div>
           <div class="col-12 col-md-7 pb-2">
             <h1 class="h4">{{ $product->title }}</h1>
@@ -56,7 +56,7 @@ id="home-page"
                     @for($i=1;$i<=5;$i++)
                         @if($i<=$product->rating)
                             <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
-                        @else 
+                        @else
                             <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto unfilled-star"></i></li>
                         @endif
                     @endfor
@@ -72,7 +72,7 @@ id="home-page"
               />
             </div>
           </div>
-          <div class="col-12">  
+          <div class="col-12">
             <div class="row py-3">
               <div class="col-sm-12 col-md-1"></div>
               <div class="col-sm-12 col-md-5">
@@ -81,7 +81,7 @@ id="home-page"
                       <div class="text-white">{!!$product->pros!!}</div>
                   </div>
               </div>
-              
+
               <div class="col-sm-12 col-md-5">
                   <div class=" mt-3 mt-md-0 p-4 h-100  w-100 d-inline-block border border-2 border product_pro_cons" id="product_cons"  >
                       <p class="h3 text-center">Points faibles</p>
@@ -98,13 +98,13 @@ id="home-page"
                             <li><i data-feather="award"></i><span>{{ $attribute->displayName }}</span>&nbsp;:&nbsp;<span class="text-primary">{{ $product[lcfirst($attribute->name)] }} @if($attribute->name=="prix") € @endif</span>
                         @endforeach
                     </ul>
-                </div> 
+                </div>
                 <div class="col-12 col-md-5">
                     <ul class="product-features list-unstyled">
                         @foreach(\App\Attribute::where("type","radio_btn")->get() as $attribute)
                             @if($product[lcfirst($attribute->name)])
                                 <li><i data-feather="check-square"></i><span>{{ $attribute->displayName }}</span>
-                            @else 
+                            @else
                                 <li><i data-feather="square"></i><span><s>{{ $attribute->displayName }}</s></span>
                             @endif
                         @endforeach
@@ -112,17 +112,17 @@ id="home-page"
                 </div>
                 <div class="col-sm-12 col-md-1"></div>
               </div>
-            
+
             </div>
           </div>
-          
+
         </div>
         <hr/>
         <div class='card-body'>
           <div class="col-12">
             <div class="d-flex flex-column flex-sm-row ">
-              <a href="{{ $product->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0">
-                <span class="add-to-cart">Voir le site</span>
+              <a href="{{ $product->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0" style="background-color:#EB8D03 !important">
+                <span class="add-to-cart">Voir le prix</span>
                 <i data-feather="chevron-right" class="ml-50"></i>
               </a>
               <a href="{{ route("produitsInit") }}" class="btn btn-outline-secondary btn-wishlist mr-0 mr-sm-1 mb-1 mb-sm-0">
@@ -134,7 +134,7 @@ id="home-page"
                 <span>{{ $compared?"Comparé":"Comparer" }}</span>
               </a>
             </div>
-          </div> 
+          </div>
         </div>
         @if(\App\Attribute::where("type","rich_text_box")->get()->count()>0)
           <!-- Item features starts -->
@@ -148,17 +148,17 @@ id="home-page"
                           <p class="card-text">{{ $product[$attribute->name] }}</p>
                           </div>
                       </div>
-                  @endforeach 
-              
+                  @endforeach
+
               </div>
           </div>
           <!-- Item features ends -->
         @else
           <hr/>
         @endif
-     
+
     <div class='card-body'>
-      <div class="col-12">  
+      <div class="col-12">
         <p class="card-text">
           {!! $product->description !!}
         </p>
@@ -166,10 +166,10 @@ id="home-page"
     </div>
     <hr>
     <div class='card-body'>
-      <div class="col-12">  
+      <div class="col-12">
         <div class="d-flex flex-column flex-sm-row pt-0">
-          <a href="{{ $product->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0">
-            <span class="add-to-cart">Voir le site</span>
+          <a href="{{ $product->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0" style="background-color:#EB8D03 !important">
+            <span class="add-to-cart">Voir le prix</span>
             <i data-feather="chevron-right" class="ml-50"></i>
           </a>
           <a href="{{ route("produitsInit") }}" class="btn btn-outline-secondary btn-wishlist mr-0 mr-sm-1 mb-1 mb-sm-0">
@@ -209,13 +209,13 @@ id="home-page"
                                 @for($i=1;$i<=5;$i++)
                                     @if($i<=$p->rating)
                                         <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
-                                    @else 
+                                    @else
                                         <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto unfilled-star"></i></li>
                                     @endif
                                 @endfor
                             </ul>
-                            <a href="{{ $p->link }}" class="btn btn-primary btn-cart mb-1 mb-sm-0 mt-2">
-                                <span class="add-to-cart">voir le site</span>
+                            <a href="{{ $p->link }}" class="btn btn-primary btn-cart mb-1 mb-sm-0 mt-2" style="background-color:#EB8D03 !important">
+                                <span class="add-to-cart">voir le prix</span>
                                 <i data-feather="chevron-right" class="ml-50"></i>
                               </a>
                             </div>
@@ -232,14 +232,14 @@ id="home-page"
         <!-- Related Products ends -->
     @endif
     <div class="card-body">
-      
+
         @if($product->reviews->count()>0)
         <!-- Reviews Products starts -->
         <div class="mt-4 mb-2 text-center">
           <p class="h4">Avis client</p>
       </div>
       <div class="col-12 mt-1" id="blogComment">
-          @foreach($product->reviews as $r) 
+          @foreach($product->reviews as $r)
             <div class="row">
               <div class="col-12 col-md-8">
                 <div class="card">
@@ -256,11 +256,11 @@ id="home-page"
                                     @for($i=1;$i<=5;$i++)
                                         @if($i<=$r->global_rate)
                                             <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
-                                        @else 
+                                        @else
                                             <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto unfilled-star"></i></li>
                                         @endif
                                     @endfor
-                                </ul>  
+                                </ul>
                                 </p>
                                 <p class="card-text">
                                     {{ $r->comment }}
@@ -276,28 +276,28 @@ id="home-page"
                         <p class="h4 card-title text-center">Synthèse des notes</h4>
                       </div>
                       <div class="card-body">
-                        <div 
-                            class="review-chart" 
-                            id="radar-chart" 
-                            data-rate-global="{{ $r->global_rate }}" 
-                            data-rate-client="{{ $r->client_service_rate }}" 
-                            data-rate-functionality="{{ $r->functionalities_rate }}" 
-                            data-rate-price="{{ $r->price_rate }}" 
+                        <div
+                            class="review-chart"
+                            id="radar-chart"
+                            data-rate-global="{{ $r->global_rate }}"
+                            data-rate-client="{{ $r->client_service_rate }}"
+                            data-rate-functionality="{{ $r->functionalities_rate }}"
+                            data-rate-price="{{ $r->price_rate }}"
                             data-rate-interface="{{ $r->interface_rate }}"></div>
                       </div>
                     </div>
                   </div>
               </div>
-            
-          @endforeach 
+
+          @endforeach
         <!-- Reviews Products ends -->
       </div>
-        @endif 
-      
+        @endif
+
     </div>
     </div>
-    
-    
+
+
       <!-- Leave a Blog Comment -->
       <div class="col-12 mt-1">
         <h6 class="section-label mt-25">Ajouter un avis</h6>
@@ -305,7 +305,7 @@ id="home-page"
           <div class="card-body">
             @if($user ?? false)
               <form action="{{ route("review") }}" class="form" method="POST">
-                @csrf 
+                @csrf
                 <div class="row">
                   <div class="col-md-6 col-12">
                     <div class="mb-2">
@@ -322,7 +322,7 @@ id="home-page"
                         <div class="basic-ratings ratingStars" starWidth="26px"></div>
                         <input type="hidden" name="global_rate" value="5" class="counter"/>
                       </div>
-                    </div>  
+                    </div>
                     <div class="row">
                       <div class="col-md-6 col-12">
                         <div class="card mb-1 align-items-center">
@@ -367,13 +367,13 @@ id="home-page"
                     </div>
                   </div>
                   <input type="hidden" name="product_id" value="{{ $product->id }}"/>
-                  
+
                   <div class="col-12 text-center">
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                   </div>
                 </div>
               </form>
-              @else 
+              @else
                 <div class=" text-center">
                   <a href="{{ route("auth.redirect",["slug"=>$product->slug]) }}" class="btn btn-primary mx-auto">Se connecter avec LinkedIn</a>
                 </div>
@@ -381,10 +381,10 @@ id="home-page"
           </div>
         </div>
       </div>
-     
+
       <!--/ Leave a Blog Comment -->
     </div>
-    
+
 @endsection
 {{-- Footer --}}
 @section('footer')

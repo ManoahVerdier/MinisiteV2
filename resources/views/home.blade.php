@@ -59,21 +59,21 @@ id="home-page"
                                 <li><i data-feather="award"></i><span>{{ $attribute->displayName }}</span>&nbsp;:&nbsp;<span class="text-primary">{{ $p[lcfirst($attribute->name)] }} @if($attribute->name=="prix") € @endif</span>
                             @endforeach
                         </ul>
-                    </div> 
+                    </div>
                     <div class="col-12 col-md-6">
                         <ul class="product-features list-unstyled">
                             @foreach(\App\Attribute::where("type","radio_btn")->get() as $attribute)
                                 @if($p[lcfirst($attribute->name)])
                                     <li><i data-feather="check-square"></i><span>{{ $attribute->displayName }}</span>
-                                @else 
+                                @else
                                     <li><i data-feather="square"></i><span><s>{{ $attribute->displayName }}</s></span>
                                 @endif
                             @endforeach
                         </ul>
                     </div>
                 </div>
-                
-                
+
+
                 <hr class="my-2" />
                 <div class="d-flex align-items-center justify-content-between flex-column flex-md-row">
                     <div class="d-flex align-items-center">
@@ -81,15 +81,15 @@ id="home-page"
                             @for($i=1;$i<=5;$i++)
                                 @if($i<=$p->rating)
                                     <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
-                                @else 
+                                @else
                                     <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto unfilled-star"></i></li>
                                 @endif
                             @endfor
                         </ul>
                     </div>
                     <div>
-                        <a href="{{ $p->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0">
-                          <span class="add-to-cart">Voir le site</span>
+                        <a href="{{ $p->link }}" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0" style="background-color:#EB8D03 !important">
+                          <span class="add-to-cart">Voir le prix</span>
                           <i data-feather="chevron-right" class="ml-50"></i>
                         </a>
                         <a href="{{route("produit",$p->slug)}}" class="btn btn-outline-secondary btn-wishlist mr-0 mr-sm-1 mb-1 mb-sm-0">
@@ -97,7 +97,7 @@ id="home-page"
                           <span>Lire l'article</span>
                         </a>
                     </div>
-                    
+
                 </div>
                 </div>
             </div>
