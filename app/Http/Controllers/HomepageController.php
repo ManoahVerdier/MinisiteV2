@@ -21,14 +21,15 @@ class HomepageController extends VoyagerBaseController
     }
 
     public function update(Request $request, $id){
-        $this->setEnv('PRIMARY_COLOR',$request->color);
-	
-        $process = new Process(['../getNode.sh']);
-	$process->setTimeout(3600);
-        $process->run();
-        
-	dd($process->getOutput(),$process->getErrorOutput());
+        if($request->color != Homepage::find($id)->id) {
+            $this->setEnv('PRIMARY_COLOR',$request->color);
 
+            $process = new Process(['../getNode.sh']);
+            $process->setTimeout(3600);
+            $process->run();
+
+            //dd($process->getOutput(),$process->getErrorOutput());
+        }
         return parent::update($request,$id);
 
     }
@@ -51,7 +52,7 @@ class HomepageController extends VoyagerBaseController
     {
         //dd($key . '="' . env($key).'"',$key . '="' . $value.'"');
         file_put_contents(
-            app()->environmentFilePath(), 
+            app()->environmentFilePath(),
             str_replace(
                 $key . '="' . env($key).'"',
                 $key . '="' . $value.'"',
