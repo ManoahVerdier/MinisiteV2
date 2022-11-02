@@ -21,7 +21,7 @@ class HomepageController extends VoyagerBaseController
     }
 
     public function update(Request $request, $id){
-        if($request->color != Homepage::find($id)->id) {
+        if($request->color != \App\Homepage::find($id)->id) {
             $this->setEnv('PRIMARY_COLOR',$request->color);
 
             $process = new Process(['../getNode.sh']);
