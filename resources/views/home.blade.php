@@ -17,13 +17,25 @@ id="home-page"
 @endsection
 
 @section('content')
+
+<style>
+.product.card img{
+max-height:400px;
+max-width:400px;
+margin-left:auto;
+margin-right:auto;
+padding-top:20px;
+padding-bottom:20px;
+}
+</style>
+
 <!-- Blog Detail -->
 <div class="blog-detail-wrapper">
   <div class="row">
     <!-- Blog -->
     <div class="col-12">
         @foreach($produits as $p)
-            <div class="card">
+            <div class="card product">
                 <img
                 src="{{ URL::asset("storage/".$p->image) }}"
                 srcset="{{ URL::asset("storage/".$p->image) }} 2400w, {{ URL::asset("storage/".str_replace(".jpg","-medium.jpg",$p->image)) }} 1200w, {{ URL::asset("storage/".str_replace(".jpg","-small.jpg",$p->image)) }} 600w"

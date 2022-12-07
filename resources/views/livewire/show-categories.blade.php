@@ -21,12 +21,13 @@
     </section>
     @forelse($mainCategories as $c)
         <div class="card">
+            <a href="{{ route("category",$c->slug) }}" class="btn btn-small btn-primary float-right d-none d-md-inline-block" style="width:200px;position: absolute;top: 10px;right: 10px; z-index:10">Voir les produits</a>
             <div class="card-header collapsed" data-toggle="collapse"  data-bs-toggle="collapse"
             data-bs-target="#accordion{{ $c->id }}"
             aria-expanded="false"
             aria-controls="accordion{{ $c->id }}">
                 <h2 class="h4 lead collapse-title">{{ $c->name }}</h2>
-                <a href="{{ route("category",$c->slug) }}" class="btn btn-small btn-primary float-right d-none d-md-inline-block">Voir les produits</a>
+
                 <a href="{{ route("category",$c->slug) }}" class="btn btn-small btn-primary float-right d-inline-block d-md-none px-1 py-50">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </a>
