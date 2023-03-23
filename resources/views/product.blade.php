@@ -44,16 +44,14 @@ id="home-page"
       <!-- Product Details starts -->
       <div class="card-body">
         <div class="row my-2">
-          {{-- <div class="col-12 col-md-5 d-flex align-items-center justify-content-center mb-2 mb-md-0">
 
-          </div> --}}
           <div class="col-12 col-md-7 pb-2">
             <h1 class="h4">{{ $product->title }}</h1>
             <span class="card-text item-company">De <a href="#" class="company-name">{{ $product->brand }}</a></span>
             <div class="ecommerce-details-price d-flex flex-wrap mt-1">
 
               <div class="item-price mr-1 h4">@if($product->prix ?? false){{ $product->prix ?? "" }} €@endif</div>
-                <ul class="unstyled-list list-inline pl-1 @if($product->prix ?? false) border-left @endif">
+                <ul class="unstyled-list list-inline  @if($product->prix ?? false) pl-1 border-left @endif">
                     @for($i=1;$i<=5;$i++)
                         @if($i<=$product->rating)
                             <li class="ratings-list-item"><i data-feather="star" height="20px" width="20px" class="h-auto w-auto filled-star text-primary fill-current"></i></li>
