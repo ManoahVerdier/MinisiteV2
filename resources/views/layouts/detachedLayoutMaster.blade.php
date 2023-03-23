@@ -17,9 +17,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
     <meta name="description"
     content="@yield("metadesc")">
-    <meta name="keywords"
-      content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
+
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>@yield('title')</title>
     <link rel="apple-touch-icon" href="{{ asset('images/ico/favicon-32x32.png') }}">
